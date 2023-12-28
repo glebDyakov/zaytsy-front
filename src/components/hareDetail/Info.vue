@@ -33,7 +33,7 @@
         </div>
       </div>
       <div
-        class="flex flex-col p-[12px] lg:w-[480px] h-[435px]"
+        class="flex flex-col p-[12px] lg:w-[480px] h-[435px] bg-no-repeat"
         style="background-image: url('src/assets/img/Card.png')"
       >
         <p class="main--section--welcome--main--item--title">Брандмейстер</p>
