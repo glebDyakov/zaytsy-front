@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
   import Welcome from '@/components/main/Welcome.vue';
   import Map from '@/components/main/Map.vue';
   import StoryOrigin from '@/components/main/StoryOrigin.vue';
