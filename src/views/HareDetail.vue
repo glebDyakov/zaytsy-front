@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
   import Welcome from '@/components/main/Welcome.vue';
 </script>
 
