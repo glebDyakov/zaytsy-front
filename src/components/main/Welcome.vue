@@ -43,8 +43,10 @@
 </template>
 
 <script lang="ts" setup>
+import {useRouter} from 'vue-router'
+const router = useRouter();
 const selectHare = (hare) => {
-    // TODO: select hare
+    router.push({name: 'HareDetail', query: {id: hare}});
 }
 </script>
 
