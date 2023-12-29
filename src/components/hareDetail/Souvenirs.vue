@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="custom-container">
     <div class="main--section main--section--characters">
       <p class="main--section--title main--section--characters--title">Сувениры зайцев</p>
       <div class="main--section--characters--body relative">

@@ -65,6 +65,15 @@
   font-size: 18px;
   background-color: #F8F8F8;
 }
+
+/* Замена контейнера */
+.custom-container {
+  max-width: 1260px;
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
 /* main */
 .main {
   background-color: #F8F8F8;

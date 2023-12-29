@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex w-full flex-col items-start pb-[120px]">
+  <div class="custom-container flex w-full flex-col items-start pb-[120px]">
     <p class="main--section--title">История</p>
     <div class="flex gap-[20px]">
       <div class="flex w-1/2">
