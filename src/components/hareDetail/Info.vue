@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex w-full flex-col items-start mb-[120px]">
+  <div class="custom-container flex w-full flex-col items-start mb-[120px]">
     <p class="main--section--title">Брандмейстер</p>
     <div class="flex gap-[20px]">
       <div class="flex flex-col lg:max-w-[680px] w-full justify-between">

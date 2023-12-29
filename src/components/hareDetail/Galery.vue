@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex flex-col items-start py-[120px]">
+  <div class="custom-container flex flex-col items-start py-[120px]">
     <p class="main--section--title">Галерея</p>
     <div class="galery">
       <img v-for="photo in 6" :src="`src/assets/img/photo${photo}.png`" />

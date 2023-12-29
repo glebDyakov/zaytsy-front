@@ -38,7 +38,7 @@
 .header--nav--label {
   color: #fff;
   font-weight: 500;
-  font-size: 15;
+  font-size: 15px;
   font-family: 'Montserrat';
   cursor: pointer;
 }
@@ -64,6 +64,15 @@
   font-weight: 400;
   font-size: 18px;
   background-color: #F8F8F8;
+}
+
+/* Замена контейнера */
+.custom-container {
+  max-width: 1260px;
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* main */
 .main {
@@ -297,8 +306,9 @@
   background-image: url('./img/background-section.png');
 }
 
-.main--section--story-origin--content {
+.main--section--content {
   max-width: 1180px;
+  align-items: start;
 }
 
 .main--section--characters--title {
@@ -505,7 +515,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 188px;
   margin-bottom: 100px;
 }
 
@@ -523,22 +532,21 @@
 }
 
 .main--section--contacts--content {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
 .main--section--contact {
   flex-direction: row;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .main--section--contact--plate {
   background-color: #CF9D52;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -689,7 +697,7 @@
 .footer--content--subtitle, .footer--content--subtitle--mobile {
   color: #fff;
   font-weight: 400;
-  font-size: 14;
+  font-size: 14px;
   font-family: 'Montserrat';
 }
 

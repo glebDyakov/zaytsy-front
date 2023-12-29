@@ -1,11 +1,11 @@
 <template>
-    <div class="main--section main--section--story-origin">
-        <div class="main--section main--section--story-origin--content">
+    <div class="main--section main--content">
+        <div class="main--section main--section--content">
             <p class="main--section--title">Начало истории</p>
             <div class="main--section--new-story--body main--section--new-story--body--reversed">
                 <div class="main--section--new-story--body--aside">
                     <p class="main--section--new-story--body--aside--title">Все мы знаем стихотворение Николая Алексеевича Некрасова «Дедушка Мазай и зайцы». Выдумку или быль нам рассказал Некрасов?</p>
-                    <button class="btn btn--minimized">Подробнее</button>
+                    <button class="btn btn--minimized"  @click="$router.push('start-story')">Подробнее</button>
                 </div>
                 <div class="main--section--new-story--body--items">
                     <div
