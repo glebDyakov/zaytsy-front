@@ -10,41 +10,129 @@
             </div>
         </div>
         <div class="main--section--welcome--main">
-            <div class="main--section--welcome--main--item main--section--welcome--main--item--official" @click="selectHare('OFFICIAL')">
-                <p class="main--section--welcome--main--item--title">Чиновник</p>
-                <div class="main--section--welcome--main--item--desc">
-                    <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
-                    <p class="main--section--welcome--main--item--desc--label">Ботниковский сквер, напротив прохода в Администрацию города.</p>
+            <div
+                ref="slider"
+                class="main--section--welcome--main--items">
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--official" @click="selectHare('OFFICIAL')">
+                    <p class="main--section--welcome--main--item--title">Чиновник</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">Ботниковский сквер, напротив прохода в Администрацию города.</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--fireman" @click="selectHare('FIREMAN')">
+                    <p class="main--section--welcome--main--item--title">Пожарный</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">Сусанинская площадь, напротив Пожарной каланчи</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--merchant" @click="selectHare('MERCHANT')">
+                    <p class="main--section--welcome--main--item--title">Купчиха</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">ул. Молочная гора, 1 Парапет у Гостиного двора корпус Б</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--innkeeper" @click="selectHare('INNKEEPER')">
+                    <p class="main--section--welcome--main--item--title">Трактирщик</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">ул. Чайковского, угол Масляных рядов, у кафе «Избушка»</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--official" @click="selectHare('OFFICIAL')">
+                    <p class="main--section--welcome--main--item--title">Чиновник</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">Ботниковский сквер, напротив прохода в Администрацию города.</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--fireman" @click="selectHare('FIREMAN')">
+                    <p class="main--section--welcome--main--item--title">Пожарный</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">Сусанинская площадь, напротив Пожарной каланчи</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--merchant" @click="selectHare('MERCHANT')">
+                    <p class="main--section--welcome--main--item--title">Купчиха</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">ул. Молочная гора, 1 Парапет у Гостиного двора корпус Б</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--innkeeper" @click="selectHare('INNKEEPER')">
+                    <p class="main--section--welcome--main--item--title">Трактирщик</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">ул. Чайковского, угол Масляных рядов, у кафе «Избушка»</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--official" @click="selectHare('OFFICIAL')">
+                    <p class="main--section--welcome--main--item--title">Чиновник</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">Ботниковский сквер, напротив прохода в Администрацию города.</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--fireman" @click="selectHare('FIREMAN')">
+                    <p class="main--section--welcome--main--item--title">Пожарный</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">Сусанинская площадь, напротив Пожарной каланчи</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--merchant" @click="selectHare('MERCHANT')">
+                    <p class="main--section--welcome--main--item--title">Купчиха</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">ул. Молочная гора, 1 Парапет у Гостиного двора корпус Б</p>
+                    </div>
+                </div>
+                <div class="main--section--welcome--main--item main--section--welcome--main--item--innkeeper" @click="selectHare('INNKEEPER')">
+                    <p class="main--section--welcome--main--item--title">Трактирщик</p>
+                    <div class="main--section--welcome--main--item--desc">
+                        <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
+                        <p class="main--section--welcome--main--item--desc--label">ул. Чайковского, угол Масляных рядов, у кафе «Избушка»</p>
+                    </div>
                 </div>
             </div>
-            <div class="main--section--welcome--main--item main--section--welcome--main--item--merchant" @click="selectHare('MERCHANT')">
-                <p class="main--section--welcome--main--item--title">Купчиха</p>
-                <div class="main--section--welcome--main--item--desc">
-                    <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
-                    <p class="main--section--welcome--main--item--desc--label">ул. Молочная гора, 1 Парапет у Гостиного двора корпус Б</p>
-                </div>
-            </div>
-            <div class="main--section--welcome--main--item main--section--welcome--main--item--fireman" @click="selectHare('FIREMAN')">
-                <p class="main--section--welcome--main--item--title">Пожарный</p>
-                <div class="main--section--welcome--main--item--desc">
-                    <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
-                    <p class="main--section--welcome--main--item--desc--label">Сусанинская площадь, напротив Пожарной каланчи</p>
-                </div>
-            </div>
-            <div class="main--section--welcome--main--item main--section--welcome--main--item--innkeeper" @click="selectHare('INNKEEPER')">
-                <p class="main--section--welcome--main--item--title">Трактирщик</p>
-                <div class="main--section--welcome--main--item--desc">
-                    <img class="main--section--welcome--main--item--desc--icon" src="@/assets/icons/gps.svg" alt="location" />
-                    <p class="main--section--welcome--main--item--desc--label">ул. Чайковского, угол Масляных рядов, у кафе «Избушка»</p>
-                </div>
+            <div class="main--section--welcome--main--controls">
+                <img
+                    class="main--section--characters--body--arrow"
+                    src="@/assets/icons/chevron.svg"
+                    alt="chevron"
+                    width="10px"
+                    @click="scrollToPrevCharacter" />
+                <img
+                    class="main--section--characters--body--arrow main--section--characters--body--arrow--right"
+                    src="@/assets/icons/chevron.svg"
+                    alt="chevron"
+                    width="10px"
+                    @click="scrollToNextCharacter" />
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
+import {ref} from 'vue';
+const slider  = ref(null);
 const selectHare = (hare) => {
     // TODO: select hare
+}
+const scrollToPrevCharacter = () => {
+    slider.value.scroll({
+        left: slider.value.scrollLeft - 500,
+        behavior: "smooth",
+    });
+}
+const scrollToNextCharacter = () => {
+    slider.value.scroll({
+        left: slider.value.scrollLeft + 500,
+        behavior: "smooth",
+    });
 }
 </script>
 

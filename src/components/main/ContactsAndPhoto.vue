@@ -1,5 +1,5 @@
 <template>
-    <div class="main--section">
+    <div class="main--section main--section--contacts-and-photo">
         <div class="main--section--feedback">
             <div>
                 <p class="main--section--title">Контакты</p>
@@ -43,6 +43,13 @@
                 </div>
                 
                 <button class="btn">Отправить</button>
+                <div class="main--section--photo--confirm" @click="addPhotoOnClick">
+                    <img class="main--section--photo--confirm--img" src="@/assets/icons/add.svg" alt="telegram" width="14px" />
+                    <div class="main--section--photo--confirm--labels">
+                        <p class="main--section--photo--confirm--labels-title">Добавить фотографии (до 5 фото)</p>
+                        <p class="main--section--photo--confirm--labels-subtitle">png, jpeg, jpg, pdf (не более N мб.)</p>
+                    </div>
+                </div>
                 <div class="main--section--confirm">
                     <input type="checkbox" class="checkbox" />
                     <p class="main--section--confirm--label">Я согласен с <span class="main--section--confirm--label--privacy">политикой обработки персональных данных</span></p>
@@ -53,6 +60,13 @@
 </template>
 
 <script setup lang="ts">
+const addPhotoOnClick = () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.style.display = 'hiddden';
+    document.body.appendChild(input);
+    input.click();
+};
 </script>
 
 <style>
@@ -85,17 +99,12 @@
   pointer-events: none;
 }
 
-.select::before {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid black;
-  top: 40%;
-}
-
 .select::after {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-top: var(--size) solid black;
-  top: 55%;
+    min-width: 8px;
+    min-height: 16px;
+    background-image: url('@/assets/icons/chevron-select.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    top: calc(50% - 16px / 2);
 }
 </style>

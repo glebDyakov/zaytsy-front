@@ -2,8 +2,30 @@
     <div class="main--section main--section--characters">
         <p class="main--section--title main--section--characters--title">Городские персонажи</p>
         <div class="main--section--characters--body">
-            <img class="main--section--characters--body--arrow" src="@/assets/icons/chevron.svg" alt="chevron" />
-            <div class="main--section--characters--body--items">
+            <img
+                class="main--section--characters--body--arrow"
+                src="@/assets/icons/chevron.svg"
+                width="10px"
+                alt="chevron"
+                @click="scrollToPrevCharacter" />
+            <div
+                ref="slider"
+                class="main--section--characters--body--items">
+                <div class="main--section--characters--body--item">
+                    <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
+                    <p class="main--section--characters--body--item--title">Название</p>
+                    <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
+                </div>
+                <div class="main--section--characters--body--item">
+                    <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero2.png" alt="character" />
+                    <p class="main--section--characters--body--item--title">Название</p>
+                    <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
+                </div>
+                <div class="main--section--characters--body--item">
+                    <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero3.png" alt="character" />
+                    <p class="main--section--characters--body--item--title">Название</p>
+                    <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
+                </div>
                 <div class="main--section--characters--body--item">
                     <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
@@ -20,14 +42,33 @@
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
             </div>
-            <img class="main--section--characters--body--arrow main--section--characters--body--arrow--right" src="@/assets/icons/chevron.svg" alt="chevron" />
+            <img
+                class="main--section--characters--body--arrow main--section--characters--body--arrow--right"
+                src="@/assets/icons/chevron.svg"
+                alt="chevron"
+                width="10px"
+                @click="scrollToNextCharacter" />
         </div>
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import {ref} from 'vue';
+const slider  = ref(null);
+const scrollToPrevCharacter = () => {
+    slider.value.scroll({
+        left: slider.value.scrollLeft - 500,
+        behavior: "smooth",
+    });
+}
+const scrollToNextCharacter = () => {
+    slider.value.scroll({
+        left: slider.value.scrollLeft + 500,
+        behavior: "smooth",
+    });
+}
 </script>
 
-<style>
+<style scoped>
 
 </style>
