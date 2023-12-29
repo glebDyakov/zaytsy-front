@@ -30,19 +30,23 @@
             <div class="main--section--photo">
                 <p class="main--section--title">Фото</p>
                 <p class="main--section--subtitle">Поделитесь своими лучшими фото для нашей галереи</p>
-                <input type="text" class="input" placeholder="Имя Фамилия*" />
-                <input type="text" class="input" placeholder="Откуда вы (населенный пункт)*" />
+                <input v-model="name" type="text" class="input" placeholder="Имя Фамилия" />
+                <input v-model="address" type="text" class="input" placeholder="Откуда вы (населенный пункт)" />
                 <div class="select">
-                    <select>
-                        <option value="">Выберите зайца</option>
-                        <option value="">Чиновник</option>
-                        <option value="">Купчиха</option>
-                        <option value="">Пожарный</option>
-                        <option value="">Трактирщик</option>
+                    <select
+                        :class="{'select--selected': hare.length}"
+                        v-model="hare">
+                        <option hidden selected="true" value="">Выберите зайца</option>
+                        <option value="Чиновник">Чиновник</option>
+                        <option value="Купчиха">Купчиха</option>
+                        <option value="Пожарный">Пожарный</option>
+                        <option value="Трактирщик">Трактирщик</option>
                     </select>
                 </div>
                 
-                <button class="btn">Отправить</button>
+                <button
+                    class="btn"
+                    :disabled="!name.length || !address.length || !hare.length || !isConfirm">Отправить</button>
                 <div class="main--section--photo--confirm" @click="addPhotoOnClick">
                     <img class="main--section--photo--confirm--img" src="@/assets/icons/add.svg" alt="telegram" width="14px" />
                     <div class="main--section--photo--confirm--labels">
@@ -51,7 +55,7 @@
                     </div>
                 </div>
                 <div class="main--section--confirm">
-                    <input type="checkbox" class="checkbox" />
+                    <input v-model="isConfirm" type="checkbox" class="checkbox" />
                     <p class="main--section--confirm--label">Я согласен с <span class="main--section--confirm--label--privacy">политикой обработки персональных данных</span></p>
                 </div>
             </div>
@@ -60,6 +64,11 @@
 </template>
 
 <script setup lang="ts">
+import {ref} from 'vue';
+const name = ref('');
+const address = ref('');
+const hare = ref('');
+const isConfirm = ref(false);
 const addPhotoOnClick = () => {
     const input = document.createElement('input');
     input.type = 'file';
@@ -71,23 +80,34 @@ const addPhotoOnClick = () => {
 
 <style>
 .select {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Montserrat';
   position: relative;
   margin-bottom: 24px;
 }
+
 .select select {
-  color: #bbb;
   appearance: none;
   /*  safari  */
   -webkit-appearance: none;
   /*  other styles for aesthetics */
   width: 100%;
   font-size: 1.15rem;
-  padding: 0.675em 6em 0.675em 1em;
+  padding: 0.675em 6em 16px 0px;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #caced1;
   border-radius: 0.25rem;
-  cursor: pointer;
+  cursor: pointer;  
+}
+
+.select select {
+    color: #bbb;
+}
+
+.select select.select--selected {
+    color: #000;
 }
 
 .select::before,
