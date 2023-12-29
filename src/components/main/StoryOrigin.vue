@@ -32,7 +32,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {ref} from 'vue'
 const selectedItem = ref('NEKRASOV_AND_MAZAI');
 const selectItem = (val) => {

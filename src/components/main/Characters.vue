@@ -4,47 +4,47 @@
         <div class="main--section--characters--body">
             <img
                 class="main--section--characters--body--arrow"
-                src="@/assets/icons/chevron.svg"
+                src="@/assets/icons/chevron-left.svg"
                 width="10px"
                 alt="chevron"
                 @click="scrollToPrevCharacter" />
             <div
                 ref="slider"
                 class="main--section--characters--body--items">
-                <div class="main--section--characters--body--item">
+                <div class="main--section--characters--body--item min-w-[380px]">
                     <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item">
+                <div class="main--section--characters--body--item min-w-[380px]">
                     <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero2.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item">
+                <div class="main--section--characters--body--item min-w-[380px]">
                     <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero3.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item">
+                <div class="main--section--characters--body--item min-w-[380px]">
                     <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item">
+                <div class="main--section--characters--body--item min-w-[380px]">
                     <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero2.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item">
+                <div class="main--section--characters--body--item min-w-[380px]">
                     <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero3.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
             </div>
             <img
-                class="main--section--characters--body--arrow main--section--characters--body--arrow--right"
-                src="@/assets/icons/chevron.svg"
+                class="main--section--characters--body--arrow"
+                src="@/assets/icons/chevron-right.svg"
                 alt="chevron"
                 width="10px"
                 @click="scrollToNextCharacter" />

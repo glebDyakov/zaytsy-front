@@ -4,7 +4,7 @@
             <p class="main--section--news--header--title">Новости</p>
             <div class="main--section--news--header--show-all">
                 <p class="main--section--news--header--show-all--label">Показать все</p>
-                <img class="main--section--news--header--show-all--icon" src="@/assets/icons/chevron.svg" alt="show all" width="8px" />
+                <img class="main--section--news--header--show-all--icon" src="../../assets/icons/chevron-left.svg" alt="show all" width="8px" />
             </div>
         </div>
         <div class="main--section--news--body">
@@ -22,7 +22,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 </script>
 
 <style>

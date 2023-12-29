@@ -102,13 +102,13 @@
                 <div class="main--section--welcome--main--controls">
                     <img
                         class="main--section--characters--body--arrow"
-                        src="@/assets/icons/chevron.svg"
+                        src="@/assets/icons/chevron-left.svg"
                         alt="chevron"
                         width="10px"
                         @click="scrollToPrevCharacter" />
                     <img
-                        class="main--section--characters--body--arrow main--section--characters--body--arrow--right"
-                        src="@/assets/icons/chevron.svg"
+                        class="main--section--characters--body--arrow"
+                        src="@/assets/icons/chevron-right.svg"
                         alt="chevron"
                         width="10px"
                         @click="scrollToNextCharacter" />
@@ -118,11 +118,13 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import {ref} from 'vue';
+import {useRouter} from 'vue-router'
 const slider  = ref(null);
+const router = useRouter();
 const selectHare = (hare) => {
-    // TODO: select hare
+    router.push({name: 'HareDetail', query: {id: hare}});
 }
 const scrollToPrevCharacter = () => {
     slider.value.scroll({
