@@ -2,7 +2,7 @@
     <div class="main--section">
         <div class="main--section--news--header">
             <p class="main--section--news--header--title">Новости</p>
-            <div class="main--section--news--header--show-all">
+            <div v-if="isShowAll" class="main--section--news--header--show-all" @click="showAll">
                 <p class="main--section--news--header--show-all--label">Показать все</p>
                 <img class="main--section--news--header--show-all--icon" src="../../assets/icons/chevron-left.svg" alt="show all" width="8px" />
             </div>
@@ -16,13 +16,28 @@
                 <p class="main--section--news--body--item--date">13.11.2023</p>
                 <p class="main--section--news--body--item--title">Название</p>
                 <p class="main--section--news--body--item--subtitle">Принимая во внимание показатели успешности, курс на социально-ориентированный национальный проект способствует повышению качества поставленных обществом задач.</p>
-                <button class="btn btn--outlined">Читать дальше</button>
+                <button class="btn btn--outlined">{{btnNextContent}}</button>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import {useRouter} from 'vue-router';
+defineProps({
+    isShowAll: {
+        type: Boolean,
+        default: true
+    },
+    btnNextContent: {
+        type: String,
+        default: 'Читать дальше'
+    }
+});
+const router = useRouter();
+const showAll = () => {
+    router.push({name: 'News'});
+};
 </script>
 
 <style>
