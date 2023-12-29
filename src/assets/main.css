@@ -738,3 +738,24 @@
     display: block;
   }
 }
+
+.news-detail--body {
+  max-width: 1180px;
+}
+
+.news-detail--body--title {
+  font-size: 44px;
+  font-weight: 700;
+  font-family: 'Book antiqua';
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}
+
+.news-detail--body--img {
+  height: 450px;
+  margin-bottom: 30px;
+}
+
+.news-detail--body--subtitle {
+  margin-bottom: 100px;
+}

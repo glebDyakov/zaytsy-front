@@ -16,7 +16,7 @@
                 <p class="main--section--news--body--item--date">13.11.2023</p>
                 <p class="main--section--news--body--item--title">Название</p>
                 <p class="main--section--news--body--item--subtitle">Принимая во внимание показатели успешности, курс на социально-ориентированный национальный проект способствует повышению качества поставленных обществом задач.</p>
-                <button class="btn btn--outlined">{{btnNextContent}}</button>
+                <button class="btn btn--outlined" @click="openNews">{{btnNextContent}}</button>
             </div>
         </div>
     </div>
@@ -37,6 +37,9 @@ defineProps({
 const router = useRouter();
 const showAll = () => {
     router.push({name: 'News'});
+};
+const openNews = () => {
+    router.push({name: 'NewsDetail', params: {id: '1'}});
 };
 </script>
 

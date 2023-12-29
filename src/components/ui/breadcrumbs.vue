@@ -3,7 +3,12 @@
     class="container flex flex-row items-start w-full pt-[30px] mb-[40px] justify-start text-[14px]"
   >
     <div class="cursor-pointer" @click="$router.push('/')">Главная&nbsp/&nbsp</div>
-    <div class="text-[#378A6F] cursor-pointer">{{ linkName }}</div>
+    <div
+      class="cursor-pointer"
+      :class="{'text-[#378A6F]': !addToRoute}">{{ linkName }}</div>
+    <span v-if="addToRoute">
+      &nbsp/&nbsp<span class="text-[#378A6F] cursor-pointer">{{ addToRoute }}</span>
+    </span>
   </div>
 </template>
 
@@ -11,6 +16,10 @@
 const props = defineProps({
   linkName: {
     type: String
+  },
+  addToRoute: {
+    type: String,
+    default: null
   }
 })
 </script>
