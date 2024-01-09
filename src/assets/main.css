@@ -607,17 +607,13 @@
   caret-color: #CF9D52;
 }
 
-.input::placeholder {
-  color: #BBBBBB;
-  display: inline;
+.input.hintable::after {
+  color: red;
+  content: "*";
+  opacity: 1
 }
 
-.input::placeholder::after {
-  display: inline;
-  color: red;
-  content: '*';
-  visibility: visible;
-}
+
 
 .checkbox {
   background-color: transparent;

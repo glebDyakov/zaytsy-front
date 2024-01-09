@@ -34,13 +34,9 @@
       <div class="main--section--photo flex flex-col">
         <p class="main--section--title">Фото</p>
         <p class="main--section--subtitle">Поделитесь своими лучшими фото для нашей галереи</p>
-        <input v-model="name" type="text" class="input" placeholder="Имя Фамилия" />
-        <input
-          v-model="address"
-          type="text"
-          class="input"
-          placeholder="Откуда вы (населенный пункт)"
-        />
+        <span @input="changeNameInput" :contenteditable="true" class="input input-rulka" :class="{'text-[#000]': name, 'text-[#BBBBBB] hintable': !name}">{{name ?? 'Имя Фамилия'}}</span>
+        <span @input="changeAddressInput" :contenteditable="true" class="input input-rulka" :class="{'text-[#000]': address, 'text-[#BBBBBB] hintable': !address}">{{address ?? 'Откуда вы (населенный пункт)'}}</span>
+         
         <div class="select">
           <select :class="{ 'select--selected': hare.length }" v-model="hare">
             <option hidden selected="true" value="">Выберите зайца</option>
@@ -53,7 +49,7 @@
 
         <button
           class="btn"
-          :disabled="!name.length || !address.length || !hare.length || !isConfirm"
+          :disabled="!name || !address || !hare.length || !isConfirm"
         >
           Отправить
         </button>
@@ -90,8 +86,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const name = ref('')
-const address = ref('')
+const name = ref(null)
+const address = ref(null)
 const hare = ref('')
 const isConfirm = ref(false)
 const addPhotoOnClick = () => {
@@ -101,6 +97,45 @@ const addPhotoOnClick = () => {
   document.body.appendChild(input)
   input.click()
 }
+
+const changeAddressInput = (e) => {
+  if (e.target.textContent.length <= 0) {
+    address.value = null
+  } else {
+    if (!address.value) {
+      e.target.textContent = e.data;
+    }
+    address.value = e.target.textContent;
+  }
+  setTimeout(() => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.setStart(e.target, e.target.childNodes.length);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, 0);
+}
+
+const changeNameInput = (e) => {
+  if (e.target.textContent.length <= 0) {
+    name.value = null
+  } else {
+    if (!name.value) {
+      e.target.textContent = e.data;
+    }
+    name.value = e.target.textContent;
+  }
+  setTimeout(() => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.setStart(e.target, e.target.childNodes.length);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, 10);
+}
+
 </script>
 
 <style>
