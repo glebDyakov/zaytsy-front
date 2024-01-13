@@ -1,12 +1,12 @@
 <template>
   <div class="main--section main--section--contacts-and-photo">
-    <div class="sm:flex-col md:flex-col flex-col main--section--feedback max-w-[1180px] justify-between">
-      <div class="flex flex-col md:flex-row gap-10">
+    <div class="sm:flex-col md:flex-col flex-col main--section--feedback md:max-w-[1180px] sm:max-w-[1180px] max-w-[380px] justify-between">
+      <div class="flex flex-col sm:flex-row md:flex-row gap-10">
         <div>
           <p class="main--section--title">Контакты</p>
           <p class="main--section--subtitle mb-[30px]">Нам интересны ваши предложения. Пишите, звоните!</p>
           <div class="main--section--contacts">
-            <div class="main--section--contacts--content">
+            <div class="sm:grid sm:grid-cols-2  md:grid md:grid-cols-3  flex main--section--contacts--content">
               <div class="main--section--contact">
                 <div class="main--section--contact--plate">
                   <img src="@/assets/icons/vk.svg" alt="vk" width="20px" />
