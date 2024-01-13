@@ -145,14 +145,14 @@
 }
 
 .main--section {
-  max-width: 1180px;
+  /* max-width: 1180px; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .main--section--title {
-  font-size: 44px;
+  /* font-size: 44px; */
   font-weight: 700;
   font-family: 'Book antiqua';
   text-transform: uppercase;
@@ -175,7 +175,7 @@
 .main--section--welcome--content {
   margin-top: calc(128px - 50.89px);
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: flex-start;
   gap: 20px;
 }
@@ -186,7 +186,7 @@
 
 .main--section--welcome--aside--title {
   max-height: 92px;
-  font-size: 60px;
+  /* font-size: 60px; */
   font-weight: 700;
   padding-bottom: 20px;
   white-space: nowrap;
@@ -236,7 +236,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   overflow: hidden;
-  max-height: 580px;
+  /* max-height: 580px; */
   margin-bottom: 20px;
 }
 
@@ -363,7 +363,7 @@
 }
 
 .main--section--map {
-  min-width: 100%;
+  /* min-width: 100%; */
   padding-bottom: 140px;
   background-image: url('./img/background-section.png');
 }
@@ -376,10 +376,6 @@
   display: flex;
   gap: 20px;
   padding-bottom: 140px;
-}
-
-.main--section--new-story--body--reversed {
-  flex-direction: row-reverse;
 }
 
 .main--section--new-story--body--aside {
@@ -434,7 +430,7 @@
 }
 
 .main--section--news--header {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -442,7 +438,7 @@
 
 .main--section--news--header--title {
   font-family: 'Book antiqua';
-  font-size: 44px;
+  /* font-size: 44px; */
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -467,13 +463,15 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
-  flex-wrap: wrap;
+  overflow: scroll;
+  /* flex-wrap: wrap; */
 }
 
 .main--section--news--body--item {
   display: flex;
   flex-direction: column;
   max-width: 380px;
+  overflow: scroll;
 }
 
 .main--section--news--body--item--img {
@@ -495,7 +493,7 @@
   font-size: 24px;
   font-weight: 700;
   color: #CF9D52;
-  font-family: 'Montserrat';
+  font-family: 'Book antiqua';
 }
 
 .main--section--news--body--item--subtitle {
@@ -512,7 +510,7 @@
 
 .main--section--feedback {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: center;
   align-items: flex-start;
   margin-bottom: 100px;
@@ -752,7 +750,7 @@
 }
 
 .news-detail--body--title {
-  font-size: 44px;
+  /* font-size: 44px; */
   font-weight: 700;
   font-family: 'Book antiqua';
   text-transform: uppercase;

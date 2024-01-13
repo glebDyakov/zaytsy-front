@@ -1,7 +1,8 @@
 <template>
   <div class="main">
-    <div class="main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
+    <div class="invisible md:visible sm:invisible main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
     <div class="main--content">
+      <div class="sm:px-9 md:px-0 px-9 sm:mx-9 md:mx-0 mx-9 max-w-0 md:max-w-full">
       <Welcome />
       <StoryOrigin />
       <Map />
@@ -9,6 +10,7 @@
       <NewStory />
       <News />
       <ContactsAndPhoto />
+      </div>
     </div>
   </div>
 </template>

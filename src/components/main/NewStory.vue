@@ -2,7 +2,7 @@
   <div class="main--section">
     <div class="main--section--content">
       <p class="main--section--title">Новая история</p>
-      <div class="main--section--new-story--body">
+      <div class="main--section--new-story--body flex-col md:flex-row">
         <div class="main--section--new-story--body--aside">
           <p class="main--section--new-story--body--aside--title">
             Узнайте историю произведения Н. А. Некрасова о дедушке Мазае и зайцах

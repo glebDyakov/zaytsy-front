@@ -1,10 +1,10 @@
 <template>
   <div class="main">
     <breadcrumbs link-name="Новости"/>
-    <div class="main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
+    <div class="invisible md:visible sm:invisible  main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
     <div class="main--content">
       <News
-        :btnNextContent="'Подробнее'"
+        :btnNextContent="btnNextContent"
         :isShowAll="false" />
     </div>
     <div class="flex gap-5 mb-12">
@@ -29,9 +29,22 @@
 <script setup lang="ts">
 import Breadcrumbs from "@/components/ui/breadcrumbs.vue";
 import News from '@/components/main/News.vue';
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 const scrollBtn = ref(null);
+
+const btnNextContent = computed(() => {
+  var match = window.matchMedia || window.msMatchMedia;
+  if (match) {
+    if (!(
+      (screen.width <= 640)
+      || (window.matchMedia
+        && window.matchMedia('only screen and (max-width: 640px)').matches)
+    ))
+      return 'Подробнее';
+  }
+  return;
+});
 
 onMounted(() => {
   window.addEventListener('scroll', () => {

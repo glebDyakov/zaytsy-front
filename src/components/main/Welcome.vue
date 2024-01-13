@@ -1,8 +1,8 @@
 <template>
     <div class="main--section main--section--welcome">
-        <div class="main--section main--section--welcome--content">
+        <div class="main--section main--section--welcome--content flex-col md:flex-row">
             <div class="main--section--welcome--aside">
-                <p class="main--section--title main--section--welcome--aside--title">Мазайские зайцы</p>
+                <p class="text-[28px] sm:text-[48px] md:text-[60px] main--section--title main--section--welcome--aside--title">Мазайские зайцы</p>
                 <div class="main--section--welcome--aside--intro">
                     <div class="main--section--welcome--aside--intro--block">
                         <p class="main--section--welcome--aside--intro--block--title">Вводный текст о проекте</p>
@@ -10,10 +10,10 @@
                     </div>
                 </div>
             </div>
-            <div class="main--section--welcome--main">
+            <div class="main--section--welcome--main min-w-full md:min-w-0">
                 <div
                     ref="slider"
-                    class="main--section--welcome--main--items">
+                    class="main--section--welcome--main--items max-h-[280px] md:max-h-[580px]">
                     <div class="main--section--welcome--main--item main--section--welcome--main--item--official" @click="selectHare('OFFICIAL')">
                         <p class="main--section--welcome--main--item--title">Чиновник</p>
                         <div class="main--section--welcome--main--item--desc">
