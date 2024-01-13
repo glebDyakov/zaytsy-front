@@ -7,7 +7,7 @@
                 <img class="main--section--news--header--show-all--icon" src="../../assets/icons/chevron-left.svg" alt="show all" width="8px" />
             </div>
         </div>
-        <div class="main--section--news--body">
+        <div class="main--section--news--body justify-center md:justify-start">
             <div
                 v-for="(item, index) in 5"
                 :key="index"

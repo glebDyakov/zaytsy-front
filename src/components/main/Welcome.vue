@@ -1,7 +1,7 @@
 <template>
     <div class="main--section main--section--welcome">
-        <div class="main--section main--section--welcome--content">
-            <div class="main--section--welcome--aside">
+        <div class="main--section main--section--welcome--content flex-col md:flex-row">
+            <div class="main--section--welcome--aside md:max-w-[680px]">
                 <p class="main--section--title main--section--welcome--aside--title">Мазайские зайцы</p>
                 <div class="main--section--welcome--aside--intro">
                     <div class="main--section--welcome--aside--intro--block">
@@ -10,10 +10,10 @@
                     </div>
                 </div>
             </div>
-            <div class="main--section--welcome--main">
+            <div class="main--section--welcome--main md:max-w-[480px]">
                 <div
                     ref="slider"
-                    class="main--section--welcome--main--items">
+                    class="main--section--welcome--main--items max-h-[280px] md:max-h-[580px] overflow-x-scroll md:overflow-x-hidden">
                     <div class="main--section--welcome--main--item main--section--welcome--main--item--official" @click="selectHare('OFFICIAL')">
                         <p class="main--section--welcome--main--item--title">Чиновник</p>
                         <div class="main--section--welcome--main--item--desc">
@@ -101,13 +101,13 @@
                 </div>
                 <div class="main--section--welcome--main--controls">
                     <img
-                        class="main--section--characters--body--arrow"
+                        class="main--section--characters--body--arrow hidden md:inline-block"
                         src="@/assets/icons/chevron-left.svg"
                         alt="chevron"
                         width="10px"
                         @click="scrollToPrevCharacter" />
                     <img
-                        class="main--section--characters--body--arrow"
+                        class="main--section--characters--body--arrow hidden md:inline-block"
                         src="@/assets/icons/chevron-right.svg"
                         alt="chevron"
                         width="10px"

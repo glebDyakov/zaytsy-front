@@ -21,14 +21,22 @@ import Characters from '@/components/main/Characters.vue';
 import NewStory from '@/components/main/NewStory.vue';
 import News from '@/components/main/News.vue';
 import ContactsAndPhoto from '@/components/main/ContactsAndPhoto.vue';
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 const scrollBtn = ref(null);
 
 onMounted(() => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
-      scrollBtn.value.style.display = 'block';
+      var match = window.matchMedia || window.msMatchMedia;
+      if (match) {
+        if (!(
+          (screen.width <= 640)
+          || (window.matchMedia
+            && window.matchMedia('only screen and (max-width: 640px)').matches)
+        ))
+          scrollBtn.value.style.display = 'block';
+      }
     } else {
       scrollBtn.value.style.display = 'none';
     }

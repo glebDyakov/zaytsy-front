@@ -1,37 +1,37 @@
 <template>
-  <div class="main--section main--section--contacts-and-photo">
-    <div class="main--section--feedback max-w-[1180px] justify-between">
-      <div class="flex flex-col">
+  <div class="main--section main--section--contacts-and-photo px-4 md:px-0">
+    <div class="main--section--feedback md:max-w-[1180px] justify-between flex-col md:flex-row md:gap-14 w-screen px-4 md:px-0">
+      <div class="flex flex-col mb-36 md:mb-0">
         <p class="main--section--title">Контакты</p>
         <p class="main--section--subtitle mb-[30px]">Нам интересны ваши предложения. Пишите, звоните!</p>
         <div class="main--section--contacts">
-          <div class="main--section--contacts--content">
-            <div class="main--section--contact">
+          <div class="main--section--contacts--content flex md:grid gap-[0px] md:gap-[40px]">
+            <div class="main--section--contact block md:flex">
               <div class="main--section--contact--plate">
                 <img src="@/assets/icons/vk.svg" alt="vk" width="20px" />
               </div>
-              <p class="main--section--contact--label">VK</p>
+              <p class="main--section--contact--label hidden md:block">VK</p>
             </div>
             <div class="main--section--contact">
               <div class="main--section--contact--plate">
                 <img src="@/assets/icons/mail.svg" alt="email" width="20px" />
               </div>
-              <p class="main--section--contact--label">Email</p>
+              <p class="main--section--contact--label hidden md:block">Email</p>
             </div>
             <div class="main--section--contact">
               <div class="main--section--contact--plate">
                 <img src="@/assets/icons/telegram.svg" alt="telegram" width="20px" />
               </div>
-              <p class="main--section--contact--label">Telegram</p>
+              <p class="main--section--contact--label hidden md:block">Telegram</p>
             </div>
             <div class="main--section--contact">
               <img class="w-[60-px] h-[60px] mr-[12px] cursor-pointer" src="@/assets/icons/zayac.svg" alt="zayac" />
-              <p class="main--section--contact--label">Скачайте приложение</p>
+              <p class="main--section--contact--label hidden md:block">Скачайте приложение</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="main--section--photo flex flex-col">
+      <div class="main--section--photo flex flex-col w-[100%] md:w-[480px]">
         <p class="main--section--title">Фото</p>
         <p class="main--section--subtitle">Поделитесь своими лучшими фото для нашей галереи</p>
         <input v-model="name" type="text" class="input" placeholder="Имя Фамилия" />
@@ -52,7 +52,7 @@
         </div>
 
         <button
-          class="btn"
+          class="btn px-[113px] py-[14.5px] md:px-[183px] md:py-[20px]"
           :disabled="!name.length || !address.length || !hare.length || !isConfirm"
         >
           Отправить
