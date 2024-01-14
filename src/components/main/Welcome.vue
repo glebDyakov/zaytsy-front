@@ -1,16 +1,16 @@
 <template>
     <div class="main--section main--section--welcome">
-        <div class="main--section main--section--welcome--content flex-col md:flex-row">
-            <div class="main--section--welcome--aside md:max-w-[680px]">
-                <p class="main--section--title main--section--welcome--aside--title">Мазайские зайцы</p>
-                <div class="main--section--welcome--aside--intro">
+        <div class="main--section main--section--welcome--content flex-col md:flex-row w-screen">
+            <div class="main--section--welcome--aside w-[100%] md:max-w-[680px]">
+                <p class="main--section--title main--section--welcome--aside--title whitespace-break-spaces md:whitespace-nowrap md:max-h-[92px] mx-[16px] lg:mx-0">Мазайские зайцы</p>
+                <div class="main--section--welcome--aside--intro mx-[16px] lg:mx-0 border-solid border-1 border border-[#BBBBBB]">
                     <div class="main--section--welcome--aside--intro--block">
                         <p class="main--section--welcome--aside--intro--block--title">Вводный текст о проекте</p>
                         <p class="main--section--welcome--aside--intro--block--subtitle">Мы начинаем новую историю Мазайских зайцев!<br />Как они спасённые Мазаем, в губернском городе оказались, да в люди вышли. Найдите зайцев в городе, а они расскажут истории Костромы на рубеже ушедших веков</p>
                     </div>
                 </div>
             </div>
-            <div class="main--section--welcome--main md:max-w-[480px]">
+            <div class="main--section--welcome--main w-[100%] md:max-w-[480px] mx-[16px] lg:mx-0">
                 <div
                     ref="slider"
                     class="main--section--welcome--main--items max-h-[280px] md:max-h-[580px] overflow-x-scroll md:overflow-x-hidden">

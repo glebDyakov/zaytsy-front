@@ -2,7 +2,11 @@
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        'left': 'left'
+      },
+    },
     screens: {
       'xxs': '320px',
       'xs': '375px',

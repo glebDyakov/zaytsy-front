@@ -1,6 +1,6 @@
 <template>
     <div class="main--section main--content">
-        <div class="main--section main--section--content">
+        <div class="main--section main--section--content mx-[16px] md:mx-[16px]">
             <p class="main--section--title">Начало истории</p>
             <div class="main--section--new-story--body flex-col md:flex-row-reverse">
                 <div class="main--section--new-story--body--item main--section--new-story--body--item--active md:w-[480px] h-[43px] md:h-[73px] lg:h-[110px] md:hidden flex">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="main--section--new-story--body--aside min-h-[200px] px-[14px] pt-[8px] pb-[14px] md:px-[30px] md:pt-[30px] md:pb-[30px] bg-[length:160px_120px] md:bg-[length:242px_180px] lg:bg-[length:395px_295px]">
                     <p class="main--section--new-story--body--aside--title">Все мы знаем стихотворение Николая Алексеевича Некрасова «Дедушка Мазай и зайцы». Выдумку или быль нам рассказал Некрасов?</p>
-                    <button class="btn btn--minimized w-[149px] min-h-[43px] px-[15px] py-[10px] md:w-[180px] md:max-h-[54px] md:px-[29px] md:py-[20px]"  @click="$router.push('start-story')">Подробнее</button>
+                    <button class="btn btn--minimized w-[149px] min-h-[43px] px-[15px] py-[10px] md:w-[180px] md:max-h-[54px] md:px-[29px] md:py-[20px] flex justify-center items-center"  @click="$router.push('start-story')">Подробнее</button>
                 </div>
                 <div class="main--section--new-story--body--items">
                     <div

@@ -1,7 +1,7 @@
 <template>
     <div class="main--section main--section--characters">
-        <p class="main--section--title main--section--characters--title">{{title}}</p>
-        <div class="main--section--characters--body w-screen lg:w-max">
+        <p class="main--section--title main--section--characters--title px-[16px] lg:px-0">{{title}}</p>
+        <div class="main--section--characters--body w-screen lg:w-max px-[16px] lg:px-0">
             <img
                 class="main--section--characters--body--arrow hidden lg:inline-block"
                 src="@/assets/icons/chevron-left.svg"

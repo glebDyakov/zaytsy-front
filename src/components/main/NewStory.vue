@@ -1,6 +1,6 @@
 <template>
   <div class="main--section">
-    <div class="main--section--content">
+    <div class="main--section--content mx-[16px] md:mx-[16px]">
       <p class="main--section--title">Новая история</p>
       <div class="main--section--new-story--body flex-col md:flex-row">
         <div class="main--section--new-story--body--item main--section--new-story--body--item--active md:w-[480px] h-[43px] md:h-[73px] lg:h-[110px] md:hidden flex">
@@ -18,7 +18,7 @@
           <p class="main--section--new-story--body--aside--title">
             Узнайте историю произведения Н. А. Некрасова о дедушке Мазае и зайцах
           </p>
-          <button class="btn btn--minimized w-[149px] min-h-[43px] px-[15px] py-[10px] md:w-[180px] md:max-h-[54px] md:px-[29px] md:py-[20px]">Подробнее</button>
+          <button class="btn btn--minimized w-[149px] min-h-[43px] px-[15px] py-[10px] md:w-[180px] md:max-h-[54px] md:px-[29px] md:py-[20px]flex justify-center items-center">Подробнее</button>
         </div>
         <div class="main--section--new-story--body--items">
           <div

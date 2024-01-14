@@ -1,5 +1,5 @@
 <template>
-    <div class="main--section">
+    <div class="main--section px-[16px] md:px-0">
         <div class="main--section--news--header">
             <p class="main--section--news--header--title">Новости</p>
             <div v-if="isShowAll" class="main--section--news--header--show-all" @click="showAll">
@@ -7,7 +7,7 @@
                 <img class="main--section--news--header--show-all--icon" src="../../assets/icons/chevron-left.svg" alt="show all" width="8px" />
             </div>
         </div>
-        <div class="main--section--news--body justify-center md:justify-start">
+        <div class="main--section--news--body justify-between md:justify-start">
             <div
                 v-for="(item, index) in 5"
                 :key="index"
