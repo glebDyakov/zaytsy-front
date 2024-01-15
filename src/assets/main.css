@@ -145,7 +145,7 @@
 }
 
 .main--section {
-  /* max-width: 1180px; */
+  max-width: 1180px;
   display: flex;
   flex-direction: column;
   align-items: center;

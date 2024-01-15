@@ -1,7 +1,7 @@
 <template>
     <div class="main--section">
         <div class="main--section--news--header w-screen">
-            <p class="md:ml-0 sm:ml-9 ml-9 text-[24px] sm:text-[36px] md:text-[44px] main--section--news--header--title ">Новости</p>
+            <p class="sm:ml-[60px] md:ml-[125px] ml-9 text-[24px] sm:text-[36px] md:text-[44px] main--section--news--header--title ">Новости</p>
             <div v-if="isShowAll" class="main--section--news--header--show-all" @click="showAll">
                 <p class="main--section--news--header--show-all--label">Показать все</p>
                 <img class="main--section--news--header--show-all--icon" src="../../assets/icons/chevron-left.svg" alt="show all" width="8px" />
