@@ -1,7 +1,7 @@
 <template>
     <div class="main--section main--section--welcome">
-        <div class="main--section main--section--welcome--content flex-col md:flex-row w-screen">
-            <div class="main--section--welcome--aside w-[100%] md:max-w-[680px]">
+        <div class="main--section main--section--welcome--content flex-col lg:flex-row w-screen">
+            <div class="main--section--welcome--aside w-[100%] lg:max-w-[680px]">
                 <p class="main--section--title main--section--welcome--aside--title whitespace-break-spaces md:whitespace-nowrap md:max-h-[92px] mx-[16px] lg:mx-0">Мазайские зайцы</p>
                 <div class="main--section--welcome--aside--intro mx-[16px] lg:mx-0 border-solid border-1 border border-[#BBBBBB]">
                     <div class="main--section--welcome--aside--intro--block">
@@ -10,10 +10,10 @@
                     </div>
                 </div>
             </div>
-            <div class="main--section--welcome--main w-[100%] md:max-w-[480px] mx-[16px] lg:mx-0">
+            <div class="main--section--welcome--main w-[100%] lg:max-w-[480px] mx-[16px] lg:mx-0">
                 <div
                     ref="slider"
-                    class="main--section--welcome--main--items max-h-[280px] md:max-h-[580px] overflow-x-scroll md:overflow-x-hidden">
+                    class="main--section--welcome--main--items max-h-[280px] lg:max-h-[580px] overflow-x-scroll md:overflow-x-hidden">
                     <div class="main--section--welcome--main--item main--section--welcome--main--item--official" @click="selectHare('OFFICIAL')">
                         <p class="main--section--welcome--main--item--title">Чиновник</p>
                         <div class="main--section--welcome--main--item--desc">

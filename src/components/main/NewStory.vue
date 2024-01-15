@@ -12,7 +12,7 @@
                 class="main--section--new-story--body--item--title">Партнеры и подарки</p>
             <p 
                 v-else-if="selectedItem === 'LOOKING_FOR_A_NEW_HARE'"
-                class="main--section--new-story--body--item--title">Ищем нового зайца</p>
+                class="main--section--new-story--body--item--title">{{findNewHareLabelContent}}</p>
         </div>
         <div class="main--section--new-story--body--aside min-h-[200px] px-[14px] pt-[8px] pb-[14px] md:px-[30px] md:pt-[30px] md:pb-[30px] bg-[length:160px_120px] md:bg-[length:242px_180px] lg:bg-[length:395px_295px]">
           <p class="main--section--new-story--body--aside--title">
@@ -47,7 +47,7 @@
             }"
             @click="selectItem('LOOKING_FOR_A_NEW_HARE')"
           >
-            <p class="main--section--new-story--body--item--title">Ищем нового зайца</p>
+            <p class="main--section--new-story--body--item--title">{{findNewHareLabelContent}}</p>
           </div>
         </div>
       </div>
@@ -56,9 +56,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 const selectedItem = ref('PROJECT_IDEA')
+const findNewHareLabelContent = computed(() => {
+  var match = window.matchMedia || window.msMatchMedia;
+  if (match) {
+    if ((
+      (screen.width <= 640)
+      || (window.matchMedia
+        && window.matchMedia('only screen and (max-width: 640px)').matches)
+    ))
+      return 'Хотите установить зайца?'
+  }
+  return 'Ищем нового зайца';
+})
 const selectItem = (val) => {
   selectedItem.value = val
 }

@@ -607,7 +607,7 @@
 }
 
 .input {
-  width: 483px;
+  /* width: 483px; */
   margin-bottom: 24px;
   background-color: transparent;
   border: none;
