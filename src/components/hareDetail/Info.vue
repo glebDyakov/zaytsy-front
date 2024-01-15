@@ -1,7 +1,7 @@
 <template>
   <div class="custom-container flex w-full flex-col items-start mb-[120px]">
     <p class="main--section--title">Брандмейстер</p>
-    <div class="flex flex-col-reverse gap-[20px]">
+    <div class="flex flex-col-reverse md:flex-row gap-[20px]">
       <div class="flex flex-col lg:max-w-[680px] w-full justify-between">
         <span class="leading-[140%]">
           Не всё, то золото, даже если это называют «золотой ротой». В каждом городе были свои
