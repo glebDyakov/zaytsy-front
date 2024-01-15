@@ -48,7 +48,7 @@
     </div>
     <RouterView :class="{'': isDrawerOpened}" />
   </div>
-  <div class="footer">
+  <div class="footer relative  top-[97px]">
     <div class="footer--content">
       <div class="footer--content--header">
         <img src="@/assets/icons/logo.svg" alt="logo" width="40px" />
