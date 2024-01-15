@@ -33,7 +33,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="relative top-[97px]">
     <div
       class="fixed bg-[#378A6F] w-[400px] h-screen top-0 md:hidden p-[40px] z-[5] transition-translate duration-150 ease-out translate-x-0"
       :class="{'translate-x-[-400px]': !isDrawerOpened}">
