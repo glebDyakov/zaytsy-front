@@ -1,7 +1,7 @@
 <template>
   <div class="main--section">
     <div class="main--section--content">
-      <p class="main--section--title">Новая история</p>
+      <p class="text-[24px] sm:text-[36px] md:text-[44px] main--section--title">Новая история</p>
       <div class="main--section--new-story--body flex-col md:flex-row">
         <div class="main--section--new-story--body--aside">
           <p class="main--section--new-story--body--aside--title">

@@ -1,7 +1,7 @@
 <template>
     <div class="main--section main--content">
         <div class="main--section main--section--content">
-            <p class="main--section--title">Начало истории</p>
+            <p class="text-[24px] sm:text-[36px] md:text-[44px] main--section--title">Начало истории</p>
             <div class="main--section--new-story--body flex-col md:flex-row-reverse">
                 <div class="main--section--new-story--body--aside">
                     <p class="main--section--new-story--body--aside--title">Все мы знаем стихотворение Николая Алексеевича Некрасова «Дедушка Мазай и зайцы». Выдумку или быль нам рассказал Некрасов?</p>

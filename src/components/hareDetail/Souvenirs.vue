@@ -9,7 +9,7 @@
 
         <div class="main--section--characters--body--items">
           <div class="main--section--characters--body--item cursor-pointer">
-            <img class="main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
+            <img class=" main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
             <p class="main--section--characters--body--item--title">Название</p>
             <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
           </div>
