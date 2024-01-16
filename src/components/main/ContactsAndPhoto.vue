@@ -4,29 +4,29 @@
       <div class="flex flex-col sm:flex-row md:flex-row gap-10">
         <div>
           <p class="text-[24px] sm:text-[36px] md:text-[44px] main--section--title">Контакты</p>
-          <p class="main--section--subtitle mb-[30px]">Нам интересны ваши предложения. Пишите, звоните!</p>
+          <p class="main--section--subtitle text-[16px] sm:text-[18px] md:text-[18px] mb-[30px]">Нам интересны ваши предложения. Пишите, звоните!</p>
           <div class="main--section--contacts">
             <div class="sm:grid sm:grid-cols-2  md:grid md:grid-cols-3  flex main--section--contacts--content">
               <div class="main--section--contact">
-                <div class="sm:w-[60px] md:w-[60px] w-[48px] sm:h-[60px] md:h-[60px] h-[48px] main--section--contact--plate">
+                <div class="sm:mr-[-15px] md:mr-[0px] mr-[0px] sm:w-[60px] md:w-[60px] w-[48px] sm:h-[60px] md:h-[60px] h-[48px] main--section--contact--plate">
                   <img src="@/assets/icons/vk.svg" alt="vk" width="20px" />
                 </div>
                 <p class="invisible md:visible sm:visible w-0 main--section--contact--label">VK</p>
               </div>
               <div class="main--section--contact">
-                <div class="sm:mr-[-15px] md:mr-[-15px] mr-[0px] sm:w-[60px] md:w-[60px] w-[48px] sm:h-[60px] md:h-[60px] h-[48px] main--section--contact--plate">
+                <div class="sm:mr-[-15px] md:mr-[0px] mr-[0px] sm:w-[60px] md:w-[60px] w-[48px] sm:h-[60px] md:h-[60px] h-[48px] main--section--contact--plate">
                   <img src="@/assets/icons/mail.svg" alt="email" width="20px" />
                 </div>
                 <p class="invisible md:visible sm:visible w-0 main--section--contact--label">Email</p>
               </div>
               <div class="main--section--contact">
-                <div class="sm:w-[60px] md:w-[60px] w-[48px] sm:h-[60px] md:h-[60px] h-[48px] main--section--contact--plate">
+                <div class="sm:mr-[-15px] md:mr-[0px] mr-[0px] sm:w-[60px] md:w-[60px] w-[48px] sm:h-[60px] md:h-[60px] h-[48px] main--section--contact--plate">
                   <img src="@/assets/icons/telegram.svg" alt="telegram" width="20px" />
                 </div>
                 <p class="invisible md:visible sm:visible w-0 main--section--contact--label">Telegram</p>
               </div>
               <div class="main--section--contact">
-                <div class="sm:w-[60px] md:w-[60px] w-[48px] sm:h-[60px] md:h-[60px] h-[48px] main--section--contact--plate">
+                <div class="sm:mr-[-15px] md:mr-[0px] mr-[0px] sm:w-[60px] md:w-[60px] w-[48px] sm:h-[60px] md:h-[60px] h-[48px] main--section--contact--plate">
                 <img class="w-[60-px] h-[60px] mr-[12px] cursor-pointer" src="@/assets/icons/zayac.svg" alt="zayac" />
                 </div>
                 <p class="invisible md:visible sm:visible w-0 main--section--contact--label">Скачайте приложение</p>
@@ -34,14 +34,14 @@
             </div>
           </div>
         </div>
-        <div class="main--section--photo flex flex-col">
+        <div class="main--section--photo sm:max-w-[334px] md:max-w-[480px] max-w-[328px] flex flex-col">
         <p class="text-[24px] sm:text-[36px] md:text-[44px] main--section--title">Фото</p>
-        <p class="main--section--subtitle">Поделитесь своими лучшими фото для нашей галереи</p>
-        <input v-model="name" type="text" class="input" placeholder="Имя Фамилия" />
+        <p class="main--section--subtitle text-[16px] sm:text-[18px] md:text-[18px]">Поделитесь своими лучшими фото для нашей галереи</p>
+        <input v-model="name" type="text" class="input w-[334px] md:w-[483px] sm:w-[328px]" placeholder="Имя Фамилия" />
         <input
           v-model="address"
           type="text"
-          class="input"
+          class="input w-[334px] md:w-[483px] sm:w-[328px]"
           placeholder="Откуда вы (населенный пункт)"
         />
         <div class="select">
@@ -55,7 +55,7 @@
         </div>
 
         <button
-          class="btn"
+          class="btn md:py-[20px] md:px-[20px] "
           :disabled="!name.length || !address.length || !hare.length || !isConfirm"
         >
           Отправить
