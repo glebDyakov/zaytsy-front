@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div v-if="$route.path !== '/404'" class="header">
     <img src="@/assets/icons/logo.svg" alt="logo" width="80px" />
     <div class="nav">
       <p class="header--nav--label">Главная</p>
@@ -21,7 +21,7 @@
     </div>
   </div>
   <RouterView />
-  <div class="footer">
+  <div v-if="$route.path !== '/404'" class="footer">
     <div class="footer--content">
       <div class="footer--content--header">
         <img src="@/assets/icons/logo.svg" alt="logo" width="40px" />
