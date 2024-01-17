@@ -1,6 +1,6 @@
 <template>
     <div class="main--section main--section--characters">
-        <p class="text-[24px] sm:text-[36px] md:text-[44px] main--section--title main--section--characters--title">Городские персонажи</p>
+        <p class="text-[24px] sm:text-[36px] md:text-[44px] pr-[150px] sm:pr-[400px] md:pr-[0px] md:text-left md:self-start main--section--title main--section--characters--title">Городские персонажи</p>
         <div class="main--section--characters--body w-screen md:w-max">
             <img
                 class="main--section--characters--body--arrow"

@@ -312,8 +312,8 @@
 }
 
 .main--section--characters--title {
-  text-align: left;
-  align-self: flex-start;
+  /* text-align: left; */
+  /* align-self: flex-start; */
 }
 
 .main--section--characters--body {
