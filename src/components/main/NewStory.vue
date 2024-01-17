@@ -7,7 +7,7 @@
           <p class="main--section--new-story--body--aside--title text-[15px] sm:text-[16px] md:text-[20px]">
             Узнайте историю произведения Н. А. Некрасова о дедушке Мазае и зайцах
           </p>
-          <button class="btn btn--minimized w-[149px] md:w-[180px] sm:w-[161px]">Подробнее</button>
+          <button class="btn btn--minimized w-[149px] md:w-[180px] sm:w-[161px] h-[42px] md:h-[54px] sm:h-[44px]">Подробнее</button>
         </div>
         <div class="main--section--new-story--body--items">
           <div
