@@ -11,33 +11,33 @@
             <div
                 ref="slider"
                 class="main--section--characters--body--items">
-                <div class="main--section--characters--body--item min-w-[380px]">
-                    <img class="sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
+                <div class="main--section--characters--body--item md:min-w-[380px]">
+                    <img class="max-w-[230px] sm:max-w-[230px] md:max-w-full sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item min-w-[380px]">
-                    <img class="sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero2.png" alt="character" />
+                <div class="main--section--characters--body--item md:min-w-[380px]">
+                    <img class="max-w-[230px] sm:max-w-[230px] md:max-w-full sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero2.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item min-w-[380px]">
-                    <img class="sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero3.png" alt="character" />
+                <div class="main--section--characters--body--item md:min-w-[380px]">
+                    <img class="max-w-[230px] sm:max-w-[230px] md:max-w-full sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero3.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item min-w-[380px]">
-                    <img class="sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
+                <div class="main--section--characters--body--item md:min-w-[380px]">
+                    <img class="max-w-[230px] sm:max-w-[230px] md:max-w-full sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero1.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item min-w-[380px]">
-                    <img class="sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero2.png" alt="character" />
+                <div class="main--section--characters--body--item md:min-w-[380px]">
+                    <img class="max-w-[230px] sm:max-w-[230px] md:max-w-full sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero2.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>
-                <div class="main--section--characters--body--item min-w-[380px]">
-                    <img class="sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero3.png" alt="character" />
+                <div class="main--section--characters--body--item md:min-w-[380px]">
+                    <img class="max-w-[230px] sm:max-w-[230px] md:max-w-full sm:w-[230px] md:w-auto w-[158px] main--section--characters--body--item--img" src="@/assets/img/town_hero3.png" alt="character" />
                     <p class="main--section--characters--body--item--title">Название</p>
                     <p class="main--section--characters--body--item--subtitle">Описание в 1-2 строчки</p>
                 </div>

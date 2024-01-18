@@ -233,7 +233,7 @@
   min-width: 480px;
   gap: 20px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   overflow: hidden;
   /* max-height: 580px; */
