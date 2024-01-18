@@ -10,19 +10,45 @@
         </div>
       </template>
     </breadcrumbs>
-    <div class="flex gap-[10px]">
+    <div class="flex gap-[10px] w-full mx-auto max-w-[1260px] cursor-pointer mb-[20px]">
       <img src="@/assets/icons/chevron-left.svg" alt="back" width="8px" />
       <p class="text-[#CF9D52]">Назад</p>
     </div>
     <div class="main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
-    <div class="news-detail--body">
-      <div>
-        <div></div>
-        <div></div>
+    <div class="news-detail--body flex gap-[20px] mb-[140px]">
+      <div class="flex flex-wrap gap-[10px]">
+        <div class="souvenirs-detail--body--img souvenirs-detail--body--img--primary" />
+        <div class="souvenirs-detail--body--img souvenirs-detail--body--img--secondary" />
+        <div class="souvenirs-detail--body--img souvenirs-detail--body--img--secondary" />
       </div>
-      <p class="news-detail--body--title">Брандмейстер</p>
-      <div class="main--section--news--body--item--img news-detail--body--img" />
-      <p class="main--section--news--body--item--subtitle news-detail--body--subtitle">В Статуэтка зайца Чиновника</p>
+      <div>
+        <p class="title">Брандмейстер</p>
+        <p class="text-[#CF9D52] mb-[20px]">1 200 ₽</p>
+        <p class="mb-[10px]">Статуэтка зайца Чиновника</p>
+        <p class="mb-[20px] text-[#CF9D52] border-b border-[#CF9D52] inline-block">Узнать историю зайца</p>
+        <div class="flex justify-between">
+          <p>Вес</p>
+          <p>13 гр.</p>
+        </div>
+        <hr class="my-[12px]" />
+        <div class="flex justify-between">
+          <p>Размер</p>
+          <p>35 х 18 х 22 мм.</p>
+        </div>
+        <hr class="my-[12px]" />
+        <div class="flex justify-between mb-[30px]">
+          <p>Материал</p>
+          <p>бронза</p>
+        </div>
+        <div class="flex items-center gap-5">
+          <button class="order-btn w-[345px] h-[54px] flex justify-center items-center btn btn--mimimized">Заказать</button>
+          <div class="flex gap-5">
+            <p class="text-[#CF9D52]">-</p>
+            <p>1</p>
+            <p class="text-[#CF9D52]">+</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -62,5 +88,33 @@ const scrollToTop = () => {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.order-btn {
+  margin: 0px;
+}
+
+.souvenirs-detail--body--img {
+  background-color: #BBBBBB;
+  background-image: url('@/assets/img/town_hero1.png');
+  background-size: cover;
+  background-repeat:  no-repeat;
+  background-position: center;
+}
+
+.souvenirs-detail--body--img--primary {
+  width: 680px;
+  height: 680px;
+}
+
+.souvenirs-detail--body--img--secondary {
+  width: 335px;
+  height: 335px;
+}
+
+.title {
+  font-family: 'Book Antiqua';
+  font-weight: 700;
+  font-size: 28px;
 }
 </style>
