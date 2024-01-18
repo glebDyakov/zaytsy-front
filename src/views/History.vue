@@ -16,7 +16,7 @@
                     <div class="main--section--history--body--review--img" />
                     <div>
                         <p class="main--section--history--body--review--title">Фамилия Имя</p>
-                        <p class="main--section--history--body--review--title">13.11.2023</p>
+                        <p class="main--section--history--body--review--date">13.11.2023</p>
                     </div>
                 </div>
                 <div class="flex flex-col gap-[20px]">
@@ -24,24 +24,24 @@
                     <p class="main--section--history--body--review--read-more">Читать полностью</p>
                 </div>
             </div>
-            <div class="review">
+            <div class="review main--section--history--body--review--secondary">
                 <div class="flex flex-col gap-[20px]">
                     <div class="main--section--history--body--review--img main--section--history--body--review--img--secondary" />
                     <div>
                         <p class="main--section--history--body--review--title">Фамилия Имя</p>
-                        <p class="main--section--history--body--review--title">13.11.2023</p>
+                        <p class="main--section--history--body--review--date">13.11.2023</p>
                     </div>
                 </div>
                 <div class="flex flex-col gap-[20px]">
                     <p class="main--section--history--body--review--subtitle">Отзыв клиента. Используйте 1–2 предложения в 2–4 строчки. В идеале текст в отзывах должен быть одинакового веса (количество строк +- одинаковое), чтобы некоторые отзывы не казались тяжёлыми + длинные описания читает маленький процент людей</p>
                 </div>
             </div>
-            <div class="review">
+            <div class="review main--section--history--body--review--secondary">
                 <div class="flex flex-col gap-[20px]">
                     <div class="main--section--history--body--review--img main--section--history--body--review--img--secondary" />
                     <div>
                         <p class="main--section--history--body--review--title">Фамилия Имя</p>
-                        <p class="main--section--history--body--review--title">13.11.2023</p>
+                        <p class="main--section--history--body--review--date">13.11.2023</p>
                     </div>
                 </div>
                 <div class="flex flex-col gap-[20px]">
@@ -53,7 +53,7 @@
                     <div class="main--section--history--body--review--img" />
                     <div>
                         <p class="main--section--history--body--review--title">Фамилия Имя</p>
-                        <p class="main--section--history--body--review--title">13.11.2023</p>
+                        <p class="main--section--history--body--review--date">13.11.2023</p>
                     </div>
                 </div>
                 <div class="flex flex-col gap-[20px]">
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <button class="show-more-btn flex items-center max-h-[54px] max-w-[210px] btn btn-minimized p-[24px] gap-[20px]">
+        <button class="show-more-btn flex items-center max-h-[54px] max-w-[210px] btn btn-minimized p-[24px] gap-[10px] whitespace-nowrap">
             <p>Показать еще</p>
             <img src="@/assets/icons/down.svg" alt="down" />
         </button>
@@ -142,9 +142,19 @@ const scrollToTop = () => {
 .main--section--history--body--review--img--secondary {
     background-image: url('@/assets/img/review_default_avatar.png');
     background-size: auto auto;
+    box-sizing: border-box;
+    border: 1px solid rgba(223, 223, 223, 1);
+}
+.main--section--history--body--review--secondary {
+    background-color: rgba(240, 240, 240, 1);
 }
 .main--section--history--body--review--title {
     color: rgba(41, 41, 41, 1);
+    font-weight: 500;
+    font-size: 16px;
+}
+.main--section--history--body--review--date {
+    color: rgba(187, 187, 187, 1);
     font-weight: 500;
     font-size: 16px;
 }
