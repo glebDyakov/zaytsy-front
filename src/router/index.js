@@ -4,7 +4,7 @@ import HareDetail from '../views/HareDetail.vue'
 import StartStory from "@/components/StartStory/StartStory.vue";
 import News from '../views/News.vue'
 import NewsDetail from '../views/NewsDetail.vue'
-import Parners from '../views/Parners.vue'
+import Partners from '../views/Partners.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,9 +35,9 @@ const router = createRouter({
       component: NewsDetail
     },
     {
-      path: '/parners',
-      name: 'Parners',
-      component: Parners
+      path: '/partners',
+      name: 'Partners',
+      component: Partners
     }
   ]
 })

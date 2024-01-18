@@ -50,7 +50,7 @@
         </div>
         <div class="custom-container flex flex-col items-start my-[40px]">
             <p class="main--section--title">Наши Партнеры</p>
-            <img src="@/assets/img/map.png" alt="logo" />
+            <img src="@/assets/img/partners-map.png" alt="logo" />
         </div>
     </div>
   </div>
