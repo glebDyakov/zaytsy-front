@@ -195,7 +195,7 @@
 .main--section--welcome--aside--intro {
   box-sizing: border-box;
   /* height: 488px; */
-  padding: 20px;
+  /* padding: 20px; */
   background-image: url('./img/Map3.png');
   display: flex;
   flex-direction: column;
@@ -203,7 +203,7 @@
 }
 
 .main--section--welcome--aside--intro--block {
-  padding: 20px 30px;
+  /* padding: 20px 30px; */
   background-color: #fff;
   border: 1px solid #BBBBBB;
 }
