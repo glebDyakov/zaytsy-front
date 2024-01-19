@@ -2,17 +2,17 @@
   <div class="main">
     <breadcrumbs link-name="История проекта" />
     <div class="main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
-    <div class="news-detail--body">
+    <div class="news-detail--body w-screen md:w-auto px-[16px] sm:px-[40px] lg:px-[0px] lg:mx-[16px]">
       <p class="news-detail--body--title">История проекта</p>
-      <div class="flex gap-[20px]">
-        <div class="main--section--history--body--img" />
+      <div class="flex flex-col md:flex-row gap-[20px]">
+        <div class="main--section--history--body--img md:min-w-[480px]" />
         <p class="main--section--news--body--item--subtitle news-detail--body--subtitle">Задача организации, в особенности же консультация с широким активом представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Противоположная точка зрения подразумевает, что акционеры крупнейших компаний, инициированные исключительно синтетически, призваны к ответу.<br /><br />Задача организации, в особенности же консультация с широким активом представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Противоположная точка зрения подразумевает, что акционеры крупнейших компаний, инициированные исключительно синтетически, призваны к ответу.</p>
       </div>
       <p class="news-detail--body--title">Отзывы</p>
       <div class="flex flex-col justify-center items-center gap-[20px]">
         <div class="reviews flex w-full gap-[20px]">
-            <div class="review">
-                <div class="flex flex-col gap-[20px]">
+            <div class="review flex-col sm:flex-row w-full md:w-[580px] md:h-[212px]">
+                <div class="flex flex-row sm:flex-col gap-[20px]">
                     <div class="main--section--history--body--review--img" />
                     <div>
                         <p class="main--section--history--body--review--title">Фамилия Имя</p>
@@ -24,8 +24,8 @@
                     <p class="main--section--history--body--review--read-more">Читать полностью</p>
                 </div>
             </div>
-            <div class="review main--section--history--body--review--secondary">
-                <div class="flex flex-col gap-[20px]">
+            <div class="review main--section--history--body--review--secondary flex-col sm:flex-row w-full md:w-[580px] md:h-[212px]">
+                <div class="flex flex-row sm:flex-col gap-[20px]">
                     <div class="main--section--history--body--review--img main--section--history--body--review--img--secondary" />
                     <div>
                         <p class="main--section--history--body--review--title">Фамилия Имя</p>
@@ -36,8 +36,8 @@
                     <p class="main--section--history--body--review--subtitle">Отзыв клиента. Используйте 1–2 предложения в 2–4 строчки. В идеале текст в отзывах должен быть одинакового веса (количество строк +- одинаковое), чтобы некоторые отзывы не казались тяжёлыми + длинные описания читает маленький процент людей</p>
                 </div>
             </div>
-            <div class="review main--section--history--body--review--secondary">
-                <div class="flex flex-col gap-[20px]">
+            <div class="review main--section--history--body--review--secondary flex-col sm:flex-row w-full md:w-[580px] md:h-[212px]">
+                <div class="flex flex-row sm:flex-col gap-[20px]">
                     <div class="main--section--history--body--review--img main--section--history--body--review--img--secondary" />
                     <div>
                         <p class="main--section--history--body--review--title">Фамилия Имя</p>
@@ -48,8 +48,8 @@
                     <p class="main--section--history--body--review--subtitle">Отзыв клиента. Используйте 1–2 предложения в 2–4 строчки. В идеале текст в отзывах должен быть одинакового веса (количество строк +- одинаковое), чтобы некоторые отзывы не казались тяжёлыми + длинные описания читает маленький процент людей</p>
                 </div>
             </div>
-            <div class="review">
-                <div class="flex flex-col gap-[20px]">
+            <div class="review flex-col sm:flex-row w-full md:w-[580px] md:h-[212px]">
+                <div class="flex flex-row sm:flex-col gap-[20px]">
                     <div class="main--section--history--body--review--img" />
                     <div>
                         <p class="main--section--history--body--review--title">Фамилия Имя</p>
@@ -99,7 +99,6 @@ const scrollToTop = () => {
 .main--section--history--body--img {
   background-color: #BBBBBB;
   height: 275px;
-  min-width: 480px;
   margin-bottom: 16px;
   background-image: url('@/assets/icons/default.svg');
   background-size: 75px 75px;
@@ -118,8 +117,6 @@ const scrollToTop = () => {
     display: flex;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(41, 41, 41, 0.25);
-    width: 580px;
-    height: 212px;
 }
 .main--section--history--body--review--subtitle {
     color: rgba(41, 41, 41, 1);
