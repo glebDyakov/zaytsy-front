@@ -194,7 +194,7 @@
 
 .main--section--welcome--aside--intro {
   box-sizing: border-box;
-  height: 488px;
+  /* height: 488px; */
   padding: 20px;
   background-image: url('./img/Map3.png');
   display: flex;
@@ -211,7 +211,7 @@
 .main--section--welcome--aside--intro--block--title {
   color: #CF9D52;
   font-weight: 700;
-  font-size: 28px;
+  /* font-size: 28px; */
   text-transform: uppercase;
   font-family: 'Book antiqua';
   padding-bottom: 12px;
@@ -220,7 +220,7 @@
 .main--section--welcome--aside--intro--block--subtitle {
   color: #292929;
   font-weight: 400;
-  font-size: 18px;
+  /* font-size: 18px; */
   font-family: 'Montserrat';
 }
 
