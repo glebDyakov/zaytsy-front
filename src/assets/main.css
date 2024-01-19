@@ -342,14 +342,14 @@
 .main--section--characters--body--item--title {
   color: #CF9D52;
   font-weight: 700;
-  font-size: 24;
+  /* font-size: 24px; */
   font-family: 'Montserrat';
   margin-bottom: 2px;
 }
 
 .main--section--characters--body--item--subtitle {
   font-weight: 400;
-  font-size: 16;
+  font-size: 16px;
   font-family: 'Montserrat';
 }
 
