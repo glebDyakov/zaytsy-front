@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="header fixed z-[10]">
+  <div v-if="$route.path !== '/404'" class="header fixed z-[10]">
     <img src="@/assets/icons/logo.svg" alt="logo" width="80px" />
     <div class="nav">
       <p class="header--nav--label">Главная</p>
@@ -48,7 +47,7 @@
     </div>
     <RouterView :class="{'': isDrawerOpened}" />
   </div>
-  <div class="footer relative  top-[97px]">
+  <div v-if="$route.path !== '/404'" class="footer relative  top-[97px]">
     <div class="footer--content">
       <div class="footer--content--header">
         <img src="@/assets/icons/logo.svg" alt="logo" width="40px" />
