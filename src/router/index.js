@@ -7,6 +7,7 @@ import NewsDetail from '../views/NewsDetail.vue'
 import Page404 from '../views/Page404.vue'
 import History from '../views/History.vue'
 import App from '../views/App.vue'
+import Partners from '../views/Partners.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +46,11 @@ const router = createRouter({
       path: '/app',
       name: 'App',
       component: App
+    },
+    {
+      path: '/partners',
+      name: 'Partners',
+      component: Partners
     },
     {
       path: '/history',
