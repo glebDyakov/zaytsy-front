@@ -624,6 +624,30 @@
   display: inline;
 }
 
+
+.textarea:focus {
+  outline: none;
+}
+
+.textarea {
+  min-height: 63px;
+  width: 483px;
+  margin-bottom: 24px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #BBBBBB;
+  padding: 20px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Montserrat';
+  caret-color: #CF9D52;
+}
+
+.textarea::placeholder {
+  color: #BBBBBB;
+  display: inline;
+}
+
 .input::placeholder::after {
   display: inline;
   color: red;
@@ -638,6 +662,7 @@
   min-height: 20px;
   width: 20px;
   height: 20px;
+  min-width: 20px;
   appearance: none;
   cursor: pointer;
   border-radius: 4px;
