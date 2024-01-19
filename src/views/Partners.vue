@@ -2,50 +2,72 @@
   <div class="main">
     <breadcrumbs link-name="Партнеры" />
     <div class="main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
-    <div class="news-detail--body">
+    <div class="news-detail--body px-[16px] md:px-0">
         <p class="news-detail--body--title">Партнеры</p>
         <div class="partners">
-            <div class="partner flex flex-col">
-                <div class="w-full flex best--wrap">
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
                     <img src="@/assets/icons/crown.svg" alt="best" />
                 </div>
-                <img src="@/assets/icons/Acura.svg" alt="Acura" />
+                <img src="@/assets/icons/Acura.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Acura" />
             </div>
-            <div class="partner flex flex-col">
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
                 <div class="w-full flex best--wrap">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
                     <img src="@/assets/icons/crown.svg" alt="best" />
                 </div>
-                <img src="@/assets/icons/Acura.svg" alt="Acura" />
+                <img src="@/assets/icons/Acura.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Acura" />
             </div>
-            <div class="partner flex flex-col">
-                <div class="w-full flex best--wrap">
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
                     <img src="@/assets/icons/crown.svg" alt="best" />
                 </div>
-                <img src="@/assets/icons/Acura.svg" alt="Acura" />
+                <img src="@/assets/icons/Acura.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Acura" />
             </div>
-            <div class="partner flex flex-col">
-                <div class="w-full flex best--wrap">
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
                     <img src="@/assets/icons/crown.svg" alt="best" />
                 </div>
-                <img src="@/assets/icons/Acura.svg" alt="Acura" />
+                <img src="@/assets/icons/Acura.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Acura" />
             </div>
-            <div class="partner">
-                <img src="@/assets/icons/Eicher.svg" alt="Eicher" />
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
+                </div>
+                <img src="@/assets/icons/Eicher.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Eicher" />
             </div>
-            <div class="partner">
-                <img src="@/assets/icons/Nio.svg" alt="Nio" />
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
+                </div>
+                <img src="@/assets/icons/Nio.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Nio" />
             </div>
-            <div class="partner">
-                <img src="@/assets/icons/Englon.svg" alt="Englon" />
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
+                </div>
+                <img src="@/assets/icons/Englon.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Englon" />
             </div>
-            <div class="partner">
-                <img src="@/assets/icons/Englon.svg" alt="Englon" />
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
+                </div>
+                <img src="@/assets/icons/Englon.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Englon" />
             </div>
-            <div class="partner">
-                <img src="@/assets/icons/Englon.svg" alt="Englon" />
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
+                </div>
+                <img src="@/assets/icons/Englon.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Englon" />
             </div>
-            <div class="partner">
-                <img src="@/assets/icons/Englon.svg" alt="Englon" />
+            <div class="partner w-[158px] h-[110px] md:w-[228px] md:h-[176px] flex flex-col">
+                <div class="w-full flex justify-between md:justify-end px-[12px]">
+                    <img src="@/assets/icons/info.svg" class="md:hidden" alt="best" />
+                </div>
+                <img src="@/assets/icons/Englon.svg" class="w-[88px] h-[56px] md:w-[150px] md:h-[112px]" alt="Englon" />
             </div>
         </div>
         <div class="custom-container flex flex-col items-start my-[40px]">
@@ -92,13 +114,6 @@ const scrollToTop = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 228px;
-    height: 176px;
     border: 1px solid #BBBBBB;
-}
-
-.best--wrap {
-    justify-content: end;
-    padding-right: 12px;
 }
 </style>
