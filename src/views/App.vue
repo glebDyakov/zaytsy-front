@@ -2,15 +2,15 @@
     <div class="main">
         <breadcrumbs link-name="Хотите установить зайца?" />
         <div class="main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
-        <div class="news-detail--body">
+        <div class="max-w-full lg:max-w-[1180px] px-[16px] lg:px-0">
             <p class="news-detail--body--title">Хотите установить зайца?</p>
-            <div class="flex gap-[20px] items-center mb-[160px]">
-                <div class="app--img app--img--small flex-shrink-0" />
+            <div class="flex flex-col md:flex-row gap-[20px] items-center mb-[160px]">
+                <div class="app--img app--img--small flex-shrink-0 w-full md:w-[480px]" />
                 <p class="main--section--news--body--item--subtitle text-normal text-[18px]">Зайцы могут рассказать ещё много городских, историй. Вы тоже можете стать автором идеи и установки зайца. Если вы хотите установить зайца, то отправьте нам заявку</p>
             </div>
             <p class="main--section--title">форма обратной связи</p>
             <div class="flex gap-[20px] mb-[100px]">
-                <div class="main--section--photo flex flex-col">
+                <div class="main--section--photo flex flex-col w-full md:w-auto">
                     <input v-model="name" type="text" class="input" placeholder="Имя Фамилия" />
                     <input v-model="email" type="email" class="input" placeholder="Электронная почта*" />
                     <input v-model="phone" type="phone" class="input" placeholder="Номер телефона*" />
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <button
-                        class="btn"
+                        class="btn h-[54px]"
                         :disabled="!name.length || !address.length || !hare.length || !isConfirm"
                     >
                         Отправить
@@ -57,7 +57,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="app--img app--img--large flex-shrink-0" />
+                <div class="app--img app--img--large flex-shrink-0 hidden md:block" />
             </div>
         </div>
     </div>
@@ -114,7 +114,6 @@ const scrollToTop = () => {
 }
 
 .app--img--small {
-    width: 480px;
     height: 275px;
 }
 
