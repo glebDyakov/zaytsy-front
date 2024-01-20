@@ -40,11 +40,6 @@ const router = createRouter({
       component: NewsDetail
     },
     {
-      path: '/404',
-      name: 'Page404',
-      component: Page404
-    },
-    {
       path: '/app',
       name: 'App',
       component: App
@@ -68,6 +63,11 @@ const router = createRouter({
       path: '/souvenirs/:id',
       name: 'SouvenirsDetail',
       component: SouvenirsDetail
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'Page404',
+      component: Page404
     }
   ]
 })
