@@ -9,6 +9,7 @@
     <span v-if="addToRoute">
       &nbsp/&nbsp<span class="text-[#378A6F] cursor-pointer">{{ addToRoute }}</span>
     </span>
+    <slot name="trailing" />
   </div>
 </template>
 
@@ -24,4 +25,5 @@ const props = defineProps({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
