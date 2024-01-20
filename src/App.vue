@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$route.name !== 'Page404'" class="header">
+  <div v-if="$route.name !== 'Page404'" class="header z-[50]" :class="{relative: !isDrawerOpened, fixed: isDrawerOpened}">
     <img src="@/assets/icons/logo.svg" alt="logo" width="80px" />
     <div class="nav">
       <p class="header--nav--label" @click="$router.push('/')">Главная</p>
