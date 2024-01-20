@@ -13,16 +13,15 @@
         </breadcrumbs>
     </div>
     <div class="main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
-    <div class="main--content">
-        <div class="main--section">
+    <div class="main--content px-[16px] mb-[24px] md:px-0">
+        <div class="main--section mb-[20px]">
             <div class="main--section--news--header">
                 <p class="main--section--news--header--title">Сувениры</p>
-                <div v-if="isShowAll" class="main--section--news--header--show-all" @click="showAll">
-                    <p class="main--section--news--header--show-all--label">Показать все</p>
-                    <img class="main--section--news--header--show-all--icon" src="../../assets/icons/chevron-left.svg" alt="show all" width="8px" />
+                <div class="main--section--news--header--show-all md:hidden">
+                    <img class="main--section--news--header--show-all--icon" src="@/assets/icons/filter.svg" alt="filter" width="24px" />
                 </div>
             </div>
-            <div class="mb-[20px] flex w-full justify-between">
+            <div class="mb-[20px] w-full justify-between hidden md:flex">
                 <div @mouseleave="isShowCategoriesMenu = false">
                   <div class="flex items-center gap-5" @mouseenter="isShowCategoriesMenu = true">
                     <p class="main--section--news--header--subtitle">Категория товара</p>
@@ -97,31 +96,49 @@
                     <p class="main--section--souvenirs--body--item--title">Брандмейстер</p>
                     <p class="main--section--souvenirs--body--item--subtitle">1 200 ₽</p>
                     <p class="main--section--souvenirs--body--item--content mb-[10px]">Статуэтка зайца Чиновника</p>
-                    <div class="flex items-center gap-5">
-                        <button class="btn btn--minimized max-h-[42px] flex items-center justify-center" @click="openNews">Заказать</button>
-                        <div class="flex gap-5">
-                            <p class="text-[#CF9D52]">+</p>
+                    <div class="flex flex-col md:flex-row items-center gap-5">
+                        <button class="btn btn--minimized max-h-[42px] flex items-center justify-center w-[246px] h-[42px]" @click="openNews">Заказать</button>
+                        <div class="flex gap-5 justify-between md:justify-end w-full md:w-auto">
+                            <img class="main--section--news--header--show-all--icon cursor-pointer" src="@/assets/icons/minus.svg" alt="minus" />
                             <p class="text-[#292929]">1</p>
-                            <p class="text-[#CF9D52]">-</p>
+                            <img class="main--section--news--header--show-all--icon cursor-pointer" src="@/assets/icons/plus.svg" alt="plus" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <button class="btn btn--minimized px-[98px] py-[14.5px] sm:hidden">Показать еще</button>
     </div>
     <div class="flex gap-5 mb-12">
       <img
-        class="main--section--characters--body--arrow"
+        v-if="currentPage > 0"
+        class="cursor-pointer"
         src="@/assets/icons/chevron-left.svg"
         width="10px"
-        alt="chevron" />
-      <span
-        class="text-[#CF9D52] cursor-pointer"
-        v-for="i in 5"
-        :key="i">{{i}}</span>
+        alt="chevron"
+        @click="currentPage--" />
       <img
-        class="main--section--characters--body--arrow"
+        v-else
+        src="@/assets/icons/disabled-chevron-left.svg"
+        width="10px"
+        alt="chevron" />
+      <div
+        v-for="i in pagesCount"
+        :key="i"
+        class="w-[24px] text-center"
+        :class="{'text-[#CF9D52] border-solid border-1 border-b border-[#CF9D52]': currentPage === i - 1, 'text-[#BBBBBB] cursor-pointer': currentPage !== i - 1}"
+        @click="currentPage = i - 1">{{i}}</div>
+      <img
+        v-if="currentPage < pagesCount - 1"
+        class="cursor-pointer"
         src="@/assets/icons/chevron-right.svg"
+        width="10px"
+        alt="chevron"
+        @click="currentPage++" />
+      <img
+        v-else
+        class="rotate-[180deg]"
+        src="@/assets/icons/disabled-chevron-left.svg"
         width="10px"
         alt="chevron" />
     </div>
@@ -157,6 +174,10 @@ const scrollToTop = () => {
     behavior: 'smooth'
   });
 }
+
+const currentPage = ref(0);
+
+const pagesCount = ref(5);
 </script>
 
 <style scoped>
