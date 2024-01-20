@@ -10,16 +10,18 @@
         </div>
       </template>
     </breadcrumbs>
-    <div class="flex gap-[10px] w-full mx-auto max-w-[1260px] cursor-pointer mb-[20px]">
-      <img src="@/assets/icons/chevron-left.svg" alt="back" width="8px" />
-      <p class="text-[#CF9D52]">Назад</p>
-    </div>
     <div class="main--scrooll-btn" ref="scrollBtn" @click="scrollToTop" />
-    <div class="news-detail--body flex gap-[20px] mb-[140px]">
+    <div class="news-detail--body flex gap-[20px] flex-col md:flex-row w-full px-[16px] md:px-0 ">
+      <div class="flex gap-[10px] w-full mx-auto max-w-[1260px] cursor-pointer mb-[20px]">
+        <img src="@/assets/icons/chevron-left.svg" alt="back" width="8px" />
+        <p class="text-[#CF9D52]">Назад</p>
+      </div>
+    </div>
+    <div class="news-detail--body flex gap-[20px] mb-[140px] flex-col md:flex-row w-full md:w-auto px-[16px] md:px-0">
       <div class="flex flex-wrap gap-[10px]">
         <div class="souvenirs-detail--body--img souvenirs-detail--body--img--primary" />
-        <div class="souvenirs-detail--body--img souvenirs-detail--body--img--secondary" />
-        <div class="souvenirs-detail--body--img souvenirs-detail--body--img--secondary" />
+        <div class="souvenirs-detail--body--img souvenirs-detail--body--img--secondary hidden md:block" />
+        <div class="souvenirs-detail--body--img souvenirs-detail--body--img--secondary hidden md:block" />
       </div>
       <div>
         <p class="title">Брандмейстер</p>
@@ -40,12 +42,12 @@
           <p>Материал</p>
           <p>бронза</p>
         </div>
-        <div class="flex items-center gap-5">
-          <button class="order-btn w-[345px] h-[54px] flex justify-center items-center btn btn--mimimized">Заказать</button>
-          <div class="flex gap-5">
-            <p class="text-[#CF9D52]">-</p>
+        <div class="flex flex-col sm:flex-row items-center gap-5">
+          <button class="order-btn w-full sm:w-[345px] h-[54px] flex justify-center items-center btn btn--mimimized">Заказать</button>
+          <div class="flex gap-5 justify-between sm:justify-end w-full sm:w-auto">
+            <img class="main--section--news--header--show-all--icon cursor-pointer" src="@/assets/icons/minus.svg" alt="minus" />
             <p>1</p>
-            <p class="text-[#CF9D52]">+</p>
+            <img class="main--section--news--header--show-all--icon cursor-pointer" src="@/assets/icons/plus.svg" alt="plus" />
           </div>
         </div>
       </div>
