@@ -4,7 +4,7 @@
     <div class="nav">
       <p class="header--nav--label" @click="$router.push('/')">Главная</p>
       <p class="header--nav--label" @click="$router.push('/start-story')">Начало истории</p>
-      <p class="header--nav--label">Зайцы в Костроме</p>
+      <p class="header--nav--label" @click="$router.push('/start-story')">Зайцы в Костроме</p>
       <p class="header--nav--label" @click="$router.push({path: '/', hash: '#characters'})">Персонажи</p>
       <p class="header--nav--label" @click="$router.push('/history')">История</p>
       <p class="header--nav--label" @click="$router.push('/news')">Новости</p>
@@ -36,14 +36,14 @@
     <div
       class="fixed bg-[#378A6F] w-[400px] h-screen top-0 md:hidden p-[40px] z-[5] transition-translate duration-150 ease-out translate-x-0"
       :class="{'translate-x-[-400px]': !isDrawerOpened}">
-      <p class="header--nav--label mt-[97px] mb-[30px]">Главная</p>
-      <p class="header--nav--label mb-[30px]">Начало истории</p>
-      <p class="header--nav--label mb-[30px]">Зайцы в Костроме</p>
-      <p class="header--nav--label mb-[30px]">Персонажи</p>
-      <p class="header--nav--label mb-[30px]">История</p>
-      <p class="header--nav--label mb-[30px]">Новости</p>
-      <p class="header--nav--label mb-[30px]">Партнеры</p>
-      <p class="header--nav--label">Сувениры</p>
+      <p class="header--nav--label mt-[97px] mb-[30px]" @click="$router.push('/'); toggleDrawer()">Главная</p>
+      <p class="header--nav--label mb-[30px]" @click="$router.push('/start-story'); toggleDrawer()">Начало истории</p>
+      <p class="header--nav--label mb-[30px]" @click="$router.push('/start-story'); toggleDrawer()">Зайцы в Костроме</p>
+      <p class="header--nav--label mb-[30px]" @click="$router.push({path: '/', hash: '#characters'}); toggleDrawer()">Персонажи</p>
+      <p class="header--nav--label mb-[30px]" @click="$router.push('/history'); toggleDrawer()">История</p>
+      <p class="header--nav--label mb-[30px]" @click="$router.push('/news'); toggleDrawer()">Новости</p>
+      <p class="header--nav--label mb-[30px]" @click="$router.push('/partners'); toggleDrawer()">Партнеры</p>
+      <p class="header--nav--label" @click="$router.push('/souvenirs'); toggleDrawer()">Сувениры</p>
     </div>
     <RouterView :class="{'': isDrawerOpened}" />
   </div>
