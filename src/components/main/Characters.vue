@@ -1,5 +1,5 @@
 <template>
-    <div class="main--section main--section--characters">
+    <div id="characters" class="main--section main--section--characters">
         <p class="main--section--title main--section--characters--title">Городские персонажи</p>
         <div class="main--section--characters--body">
             <img
@@ -53,8 +53,14 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
+import {onMounted, ref} from 'vue';
+import {useRoute} from 'vue-router';
 const slider  = ref(null);
+onMounted(() => {
+    const route = useRoute();
+    if (route.hash === '#characters')
+        window.scroll({top: document.querySelector('#characters').getBoundingClientRect().top});
+});
 const scrollToPrevCharacter = () => {
     slider.value.scroll({
         left: slider.value.scrollLeft - 500,

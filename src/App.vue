@@ -5,7 +5,7 @@
       <p class="header--nav--label" @click="$router.push('/')">Главная</p>
       <p class="header--nav--label" @click="$router.push('/start-story')">Начало истории</p>
       <p class="header--nav--label">Зайцы в Костроме</p>
-      <p class="header--nav--label" @click="$router.push('/characters')">Персонажи</p>
+      <p class="header--nav--label" @click="$router.push({path: '/', hash: '#characters'})">Персонажи</p>
       <p class="header--nav--label" @click="$router.push('/history')">История</p>
       <p class="header--nav--label" @click="$router.push('/news')">Новости</p>
       <p class="header--nav--label" @click="$router.push('/partners')">Партнеры</p>
