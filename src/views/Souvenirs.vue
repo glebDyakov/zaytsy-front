@@ -90,7 +90,7 @@
             </div>
             <div class="main--section--news--body">
                 <div
-                    v-for="(item, index) in 5"
+                    v-for="(item, index) in items"
                     :key="index"
                     class="main--section--news--body--item">
                     <div class="main--section--souvenirs--body--item--img" />
@@ -98,7 +98,7 @@
                     <p class="main--section--souvenirs--body--item--subtitle">1 200 ₽</p>
                     <p class="main--section--souvenirs--body--item--content mb-[10px]">Статуэтка зайца Чиновника</p>
                     <div class="flex items-center gap-5">
-                        <button class="btn btn--minimized max-h-[42px] flex items-center justify-center" @click="openNews">Заказать</button>
+                        <button class="btn btn--minimized max-h-[42px] flex items-center justify-center" @click="$router.push({ name: 'SouvenirsDetail', params: { id: item.id } })">Заказать</button>
                         <div class="flex gap-5">
                             <p class="text-[#CF9D52]">+</p>
                             <p class="text-[#292929]">1</p>
@@ -117,7 +117,7 @@
         alt="chevron" />
       <span
         class="text-[#CF9D52] cursor-pointer"
-        v-for="i in 5"
+        v-for="i in pages"
         :key="i">{{i}}</span>
       <img
         class="main--section--characters--body--arrow"
@@ -141,6 +141,41 @@ const isShowSortMenu = ref(false);
 
 const selectedCategories = ref([]);
 
+const pages = ref(5);
+
+const items = ref([
+  {
+    id: 1,
+    title: 'Брандмейстер',
+    price: 1200,
+    name: 'Статуэтка зайца Чиновника'
+  },
+  {
+    id: 2,
+    title: 'Брандмейстер',
+    price: 1200,
+    name: 'Статуэтка зайца Чиновника'
+  },
+  {
+    id: 3,
+    title: 'Брандмейстер',
+    price: 1200,
+    name: 'Статуэтка зайца Чиновника'
+  },
+  {
+    id: 4,
+    title: 'Брандмейстер',
+    price: 1200,
+    name: 'Статуэтка зайца Чиновника'
+  },
+  {
+    id: 5,
+    title: 'Брандмейстер',
+    price: 1200,
+    name: 'Статуэтка зайца Чиновника'
+  }
+]);
+
 onMounted(() => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
@@ -156,7 +191,7 @@ const scrollToTop = () => {
     top: 0,
     behavior: 'smooth'
   });
-}
+};
 </script>
 
 <style scoped>
