@@ -7,7 +7,9 @@
               <svg class="absolute" width="31" height="22" viewBox="0 0 31 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1H6.27273L9.80545 18.8529C9.926 19.4667 10.2562 20.0181 10.7381 20.4106C11.2201 20.803 11.8232 21.0115 12.4418 20.9995H25.2545C25.8732 21.0115 26.4763 20.803 26.9582 20.4106C27.4402 20.0181 27.7704 19.4667 27.8909 18.8529L30 7.6665H7.59091" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <div class="relative left-[20px] top-[-20px] text-[#CF9D52] border border-1 border-[#CF9D52] rounded-3xl flex items-center justify-center bg-[#fff] w-[25px] h-[25px]">2</div>
+              <div
+                class="relative left-[20px] top-[-20px] text-[#CF9D52] border border-1 border-[#CF9D52] rounded-3xl flex items-center justify-center bg-[#fff] w-[25px] h-[25px]"
+                :class="{'hidden': !items.filter(item => item.count > 0).length}">{{items.filter(item => item.count > 0).length}}</div>
             </div>
           </template>
         </breadcrumbs>
@@ -140,8 +142,6 @@ const isShowSortMenu = ref(false);
 const selectedSort = ref('все');
 
 const selectedCategories = ref([]);
-
-const count = ref([]);
 
 const items = ref([
   {},
