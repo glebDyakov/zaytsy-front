@@ -594,7 +594,6 @@ html {
 }
 .btn--outlined {
   /* horizontal padding is 111px */
-  padding: 14px 110.12px;
   border: 1px solid #CF9D52;
   background-color: #fff;
   color: #CF9D52;
