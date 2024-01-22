@@ -88,7 +88,7 @@
             </div>
             <div class="main--section--news--body">
                 <div
-                    v-for="(item, index) in 5"
+                    v-for="(item, index) in items"
                     :key="index"
                     class="main--section--news--body--item">
                     <div class="main--section--souvenirs--body--item--img" />
@@ -98,9 +98,9 @@
                     <div class="flex items-center gap-5">
                         <button class="btn btn--minimized max-h-[42px] flex items-center justify-center" @click="openNews">Заказать</button>
                         <div class="flex gap-5">
-                            <p class="text-[#CF9D52]">+</p>
-                            <p class="text-[#292929]">1</p>
-                            <p class="text-[#CF9D52]">-</p>
+                            <p class="text-[#CF9D52] cursor-pointer" @click="decrement(index)">-</p>
+                            <p class="text-[#292929]">{{item.count ?? 0}}</p>
+                            <p class="text-[#CF9D52] cursor-pointer" @click="increment(index)">+</p>
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
 <script setup lang="ts">
 import Breadcrumbs from "@/components/ui/breadcrumbs.vue";
 import News from '@/components/main/News.vue';
-import { ref, watch, onMounted, getCurrentInstance } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 
 const scrollBtn = ref(null);
 
@@ -141,11 +141,15 @@ const selectedSort = ref('все');
 
 const selectedCategories = ref([]);
 
-watch(selectedCategories, (val) => {
-  // const instance = getCurrentInstance();
-  // instance.ctx.$forceUpdate();
-  selectedCategories.value = val;
-});
+const count = ref([]);
+
+const items = ref([
+  {},
+  {},
+  {},
+  {},
+  {}
+]);
 
 onMounted(() => {
   window.addEventListener('scroll', () => {
@@ -167,6 +171,21 @@ const scrollToTop = () => {
 const selectSort = (sort) => {
   selectedSort.value = sort;
   isShowSortMenu.value = false;
+};
+
+const increment = (index) => {
+  const item = items.value[index];
+  if (!item.count)
+    item.count = 0;
+  item.count++;
+};
+
+const decrement = (index) => {
+  const item = items.value[index];
+  if (!item.count)
+    item.count = 0;
+  if (item.count > 0)
+    item.count--;
 };
 </script>
 
