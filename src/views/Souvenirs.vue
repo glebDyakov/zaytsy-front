@@ -111,17 +111,34 @@
     </div>
     <div class="flex gap-5 mb-12">
       <img
-        class="main--section--characters--body--arrow"
+        v-if="currentPage > 0"
+        class="cursor-pointer"
         src="@/assets/icons/chevron-left.svg"
         width="10px"
-        alt="chevron" />
-      <span
-        class="text-[#CF9D52] cursor-pointer"
-        v-for="i in 5"
-        :key="i">{{i}}</span>
+        alt="chevron"
+        @click="currentPage--" />
       <img
-        class="main--section--characters--body--arrow"
+        v-else
+        src="@/assets/icons/disabled_chevron_left.svg"
+        width="10px"
+        alt="chevron" />
+      <div
+        v-for="i in pagesCount"
+        :key="i"
+        class="w-[24px] text-center"
+        :class="{'text-[#CF9D52] border-solid border-1 border-b border-[#CF9D52]': currentPage === i - 1, 'text-[#BBBBBB] cursor-pointer': currentPage !== i - 1}"
+        @click="currentPage = i - 1">{{i}}</div>
+      <img
+        v-if="currentPage < pagesCount - 1"
+        class="cursor-pointer"
         src="@/assets/icons/chevron-right.svg"
+        width="10px"
+        alt="chevron"
+        @click="currentPage++" />
+      <img
+        v-else
+        class="rotate-[180deg]"
+        src="@/assets/icons/disabled_chevron_left.svg"
         width="10px"
         alt="chevron" />
     </div>
@@ -150,6 +167,10 @@ const items = ref([
   {},
   {}
 ]);
+
+const currentPage = ref(0);
+
+const pagesCount = ref(5);
 
 onMounted(() => {
   window.addEventListener('scroll', () => {
