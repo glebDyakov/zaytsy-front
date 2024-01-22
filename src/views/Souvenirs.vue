@@ -27,8 +27,8 @@
                   <div class="flex items-center gap-5" @mouseenter="isShowCategoriesMenu = true">
                     <p class="main--section--news--header--subtitle">Категория товара</p>
                     <div v-if="selectedCategories.length"  class="flex gap-[8px]">
-                      <div class="w-[20px] h-[20px] bg-[#CF9D52] rounded-[10px] text-[#fff] flex items-center justify-center text-noraml text-[15px]">4</div>
-                      <img class="cursor-pointer" src="@/assets/icons/times.svg" alt="close">
+                      <div class="w-[20px] h-[20px] bg-[#CF9D52] rounded-[10px] text-[#fff] flex items-center justify-center text-noraml text-[15px]">{{selectedCategories.length}}</div>
+                      <img class="cursor-pointer" src="@/assets/icons/times.svg" alt="close" @click="selectedCategories = []">
                     </div>
                     <svg v-else class="cursor-pointer" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M18 2L10 10L2 2" stroke="#CF9D52" stroke-width="1.5" stroke-linecap="square"/>
@@ -37,23 +37,19 @@
                   <div class="absolute pointer-events-none">
                     <div class="divide-y w-[224px] h-[240px] rounded-[10px] shadow flex flex-col items-center py-[12px] bg-[#FFF] relative transition-opacity pointer-events-auto" :class="{'opacity-[0] pointer-events-none': !isShowCategoriesMenu}">
                       <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
+                        <input v-model="selectedCategories" name="category" value="все" type="checkbox" class="checkbox mr-[3px]" />
                         <p class="text-[16px] font-normal text-[#292929]">все</p>
                       </div>
                       <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
+                        <input v-model="selectedCategories" name="category" value="Скульптуры" type="checkbox" class="checkbox mr-[3px]" />
                         <p class="text-[16px] font-normal text-[#292929]">Скульптуры</p>
                       </div>
                       <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
+                        <input v-model="selectedCategories" name="category" value="Кружки" type="checkbox" class="checkbox mr-[3px]" />
                         <p class="text-[16px] font-normal text-[#292929]">Кружки</p>
                       </div>
                       <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
-                        <p class="text-[16px] font-normal text-[#292929]">Стикеры</p>
-                      </div>
-                      <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
+                        <input v-model="selectedCategories" name="category" value="Стикеры" type="checkbox" class="checkbox mr-[3px]" />
                         <p class="text-[16px] font-normal text-[#292929]">Стикеры</p>
                       </div>
                     </div>
@@ -62,27 +58,29 @@
                 <div @mouseleave="isShowSortMenu = false">
                     <div class="flex items-center gap-5" @mouseenter="isShowSortMenu = true">
                       <p class="main--section--news--header--subtitle">Сортировать:</p>
-                      <p class="text-[#CF9D52]">все</p>
+                      <p class="text-[#CF9D52]">{{selectedSort}}</p>
                       <svg class="cursor-pointer" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 2L10 10L2 2" stroke="#CF9D52" stroke-width="1.5" stroke-linecap="square"/>
                       </svg>
                     </div>
-                    <div class="absolute pointer-events-none">
-                      <div class="divide-y w-[224px] h-[240px] rounded-[10px] shadow flex flex-col items-center py-[12px] bg-[#FFF] relative transition-opacity pointer-events-auto" :class="{'opacity-[0] pointer-events-none': !isShowSortMenu}">
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">все</p>
-                        </div>
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">по возрастанию цены</p>
-                        </div>
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">по убыванию цены</p>
-                        </div>
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">по величине скидки</p>
-                        </div>
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">по популярности</p>
+                    <div class="flex justify-end">
+                      <div class="absolute pointer-events-none">
+                        <div class="divide-y w-[224px] h-[240px] rounded-[10px] shadow flex flex-col items-center py-[12px] bg-[#FFF] relative transition-opacity pointer-events-auto" :class="{'opacity-[0] pointer-events-none': !isShowSortMenu}">
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('все')">
+                            <p class="text-[16px] font-normal text-[#292929]">все</p>
+                          </div>
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('по возрастанию цены')">
+                            <p class="text-[16px] font-normal text-[#292929]">по возрастанию цены</p>
+                          </div>
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('по убыванию цены')">
+                            <p class="text-[16px] font-normal text-[#292929]">по убыванию цены</p>
+                          </div>
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('по величине скидки')">
+                            <p class="text-[16px] font-normal text-[#292929]">по величине скидки</p>
+                          </div>
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('по популярности')">
+                            <p class="text-[16px] font-normal text-[#292929]">по популярности</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -131,7 +129,7 @@
 <script setup lang="ts">
 import Breadcrumbs from "@/components/ui/breadcrumbs.vue";
 import News from '@/components/main/News.vue';
-import { ref, onMounted } from 'vue';
+import { ref, watch, onMounted, getCurrentInstance } from 'vue';
 
 const scrollBtn = ref(null);
 
@@ -139,7 +137,15 @@ const isShowCategoriesMenu = ref(false);
 
 const isShowSortMenu = ref(false);
 
+const selectedSort = ref('все');
+
 const selectedCategories = ref([]);
+
+watch(selectedCategories, (val) => {
+  // const instance = getCurrentInstance();
+  // instance.ctx.$forceUpdate();
+  selectedCategories.value = val;
+});
 
 onMounted(() => {
   window.addEventListener('scroll', () => {
@@ -156,7 +162,12 @@ const scrollToTop = () => {
     top: 0,
     behavior: 'smooth'
   });
-}
+};
+
+const selectSort = (sort) => {
+  selectedSort.value = sort;
+  isShowSortMenu.value = false;
+};
 </script>
 
 <style scoped>
