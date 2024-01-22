@@ -7,7 +7,9 @@
               <svg class="absolute" width="31" height="22" viewBox="0 0 31 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1H6.27273L9.80545 18.8529C9.926 19.4667 10.2562 20.0181 10.7381 20.4106C11.2201 20.803 11.8232 21.0115 12.4418 20.9995H25.2545C25.8732 21.0115 26.4763 20.803 26.9582 20.4106C27.4402 20.0181 27.7704 19.4667 27.8909 18.8529L30 7.6665H7.59091" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <div class="relative left-[20px] top-[-20px] text-[#CF9D52] border border-1 border-[#CF9D52] rounded-3xl flex items-center justify-center bg-[#fff] w-[25px] h-[25px]">2</div>
+              <div
+                class="relative left-[20px] top-[-20px] text-[#CF9D52] border border-1 border-[#CF9D52] rounded-3xl flex items-center justify-center bg-[#fff] w-[25px] h-[25px]"
+                :class="{'hidden': !items.filter(item => item.count > 0).length}">{{items.filter(item => item.count > 0).length}}</div>
             </div>
           </template>
         </breadcrumbs>
@@ -27,8 +29,8 @@
                   <div class="flex items-center gap-5" @mouseenter="isShowCategoriesMenu = true">
                     <p class="main--section--news--header--subtitle">Категория товара</p>
                     <div v-if="selectedCategories.length"  class="flex gap-[8px]">
-                      <div class="w-[20px] h-[20px] bg-[#CF9D52] rounded-[10px] text-[#fff] flex items-center justify-center text-noraml text-[15px]">4</div>
-                      <img class="cursor-pointer" src="@/assets/icons/times.svg" alt="close">
+                      <div class="w-[20px] h-[20px] bg-[#CF9D52] rounded-[10px] text-[#fff] flex items-center justify-center text-noraml text-[15px]">{{selectedCategories.length}}</div>
+                      <img class="cursor-pointer" src="@/assets/icons/times.svg" alt="close" @click="selectedCategories = []">
                     </div>
                     <svg v-else class="cursor-pointer" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M18 2L10 10L2 2" stroke="#CF9D52" stroke-width="1.5" stroke-linecap="square"/>
@@ -37,23 +39,19 @@
                   <div class="absolute pointer-events-none">
                     <div class="divide-y w-[224px] h-[240px] rounded-[10px] shadow flex flex-col items-center py-[12px] bg-[#FFF] relative transition-opacity pointer-events-auto" :class="{'opacity-[0] pointer-events-none': !isShowCategoriesMenu}">
                       <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
+                        <input v-model="selectedCategories" name="category" value="все" type="checkbox" class="checkbox mr-[3px]" />
                         <p class="text-[16px] font-normal text-[#292929]">все</p>
                       </div>
                       <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
+                        <input v-model="selectedCategories" name="category" value="Скульптуры" type="checkbox" class="checkbox mr-[3px]" />
                         <p class="text-[16px] font-normal text-[#292929]">Скульптуры</p>
                       </div>
                       <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
+                        <input v-model="selectedCategories" name="category" value="Кружки" type="checkbox" class="checkbox mr-[3px]" />
                         <p class="text-[16px] font-normal text-[#292929]">Кружки</p>
                       </div>
                       <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
-                        <p class="text-[16px] font-normal text-[#292929]">Стикеры</p>
-                      </div>
-                      <div class="px-[12px] cursor-pointer h-[48px] w-full text-center flex items-center">
-                        <input type="checkbox" class="checkbox mr-[3px]" />
+                        <input v-model="selectedCategories" name="category" value="Стикеры" type="checkbox" class="checkbox mr-[3px]" />
                         <p class="text-[16px] font-normal text-[#292929]">Стикеры</p>
                       </div>
                     </div>
@@ -62,27 +60,29 @@
                 <div @mouseleave="isShowSortMenu = false">
                     <div class="flex items-center gap-5" @mouseenter="isShowSortMenu = true">
                       <p class="main--section--news--header--subtitle">Сортировать:</p>
-                      <p class="text-[#CF9D52]">все</p>
+                      <p class="text-[#CF9D52]">{{selectedSort}}</p>
                       <svg class="cursor-pointer" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 2L10 10L2 2" stroke="#CF9D52" stroke-width="1.5" stroke-linecap="square"/>
                       </svg>
                     </div>
-                    <div class="absolute pointer-events-none">
-                      <div class="divide-y w-[224px] h-[240px] rounded-[10px] shadow flex flex-col items-center py-[12px] bg-[#FFF] relative transition-opacity pointer-events-auto" :class="{'opacity-[0] pointer-events-none': !isShowSortMenu}">
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">все</p>
-                        </div>
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">по возрастанию цены</p>
-                        </div>
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">по убыванию цены</p>
-                        </div>
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">по величине скидки</p>
-                        </div>
-                        <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="isShowSortMenu = false">
-                          <p class="text-[16px] font-normal text-[#292929]">по популярности</p>
+                    <div class="flex justify-end">
+                      <div class="absolute pointer-events-none">
+                        <div class="divide-y w-[224px] h-[240px] rounded-[10px] shadow flex flex-col items-center py-[12px] bg-[#FFF] relative transition-opacity pointer-events-auto" :class="{'opacity-[0] pointer-events-none': !isShowSortMenu}">
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('все')">
+                            <p class="text-[16px] font-normal text-[#292929]">все</p>
+                          </div>
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('по возрастанию цены')">
+                            <p class="text-[16px] font-normal text-[#292929]">по возрастанию цены</p>
+                          </div>
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('по убыванию цены')">
+                            <p class="text-[16px] font-normal text-[#292929]">по убыванию цены</p>
+                          </div>
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('по величине скидки')">
+                            <p class="text-[16px] font-normal text-[#292929]">по величине скидки</p>
+                          </div>
+                          <div class="cursor-pointer h-[48px] w-full text-center flex items-center justify-center" @click="selectSort('по популярности')">
+                            <p class="text-[16px] font-normal text-[#292929]">по популярности</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -100,9 +100,9 @@
                     <div class="flex items-center gap-5">
                         <button class="btn btn--minimized max-h-[42px] flex items-center justify-center" @click="$router.push({ name: 'SouvenirsDetail', params: { id: item.id } })">Заказать</button>
                         <div class="flex gap-5">
-                            <p class="text-[#CF9D52]">+</p>
-                            <p class="text-[#292929]">1</p>
-                            <p class="text-[#CF9D52]">-</p>
+                            <p class="text-[#CF9D52] cursor-pointer" @click="decrement(index)">-</p>
+                            <p class="text-[#292929]">{{item.count ?? 0}}</p>
+                            <p class="text-[#CF9D52] cursor-pointer" @click="increment(index)">+</p>
                         </div>
                     </div>
                 </div>
@@ -111,17 +111,34 @@
     </div>
     <div class="flex gap-5 mb-12">
       <img
-        class="main--section--characters--body--arrow"
+        v-if="currentPage > 0"
+        class="cursor-pointer"
         src="@/assets/icons/chevron-left.svg"
         width="10px"
-        alt="chevron" />
-      <span
-        class="text-[#CF9D52] cursor-pointer"
-        v-for="i in pages"
-        :key="i">{{i}}</span>
+        alt="chevron"
+        @click="currentPage--" />
       <img
-        class="main--section--characters--body--arrow"
+        v-else
+        src="@/assets/icons/disabled_chevron_left.svg"
+        width="10px"
+        alt="chevron" />
+      <div
+        v-for="i in pagesCount"
+        :key="i"
+        class="w-[24px] text-center"
+        :class="{'text-[#CF9D52] border-solid border-1 border-b border-[#CF9D52]': currentPage === i - 1, 'text-[#BBBBBB] cursor-pointer': currentPage !== i - 1}"
+        @click="currentPage = i - 1">{{i}}</div>
+      <img
+        v-if="currentPage < pagesCount - 1"
+        class="cursor-pointer"
         src="@/assets/icons/chevron-right.svg"
+        width="10px"
+        alt="chevron"
+        @click="currentPage++" />
+      <img
+        v-else
+        class="rotate-[180deg]"
+        src="@/assets/icons/disabled_chevron_left.svg"
         width="10px"
         alt="chevron" />
     </div>
@@ -131,7 +148,7 @@
 <script setup lang="ts">
 import Breadcrumbs from "@/components/ui/breadcrumbs.vue";
 import News from '@/components/main/News.vue';
-import { ref, onMounted } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 
 const scrollBtn = ref(null);
 
@@ -139,9 +156,9 @@ const isShowCategoriesMenu = ref(false);
 
 const isShowSortMenu = ref(false);
 
-const selectedCategories = ref([]);
+const selectedSort = ref('все');
 
-const pages = ref(5);
+const selectedCategories = ref([]);
 
 const items = ref([
   {
@@ -176,6 +193,10 @@ const items = ref([
   }
 ]);
 
+const currentPage = ref(0);
+
+const pagesCount = ref(5);
+
 onMounted(() => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
@@ -191,6 +212,26 @@ const scrollToTop = () => {
     top: 0,
     behavior: 'smooth'
   });
+};
+
+const selectSort = (sort) => {
+  selectedSort.value = sort;
+  isShowSortMenu.value = false;
+};
+
+const increment = (index) => {
+  const item = items.value[index];
+  if (!item.count)
+    item.count = 0;
+  item.count++;
+};
+
+const decrement = (index) => {
+  const item = items.value[index];
+  if (!item.count)
+    item.count = 0;
+  if (item.count > 0)
+    item.count--;
 };
 </script>
 
