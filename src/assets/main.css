@@ -458,7 +458,7 @@ html {
 
 .main--section--news--header--title {
   font-family: 'Book antiqua';
-  font-size: 44px;
+  /* font-size: 44px; */
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -511,7 +511,7 @@ html {
   font-size: 24px;
   font-weight: 700;
   color: #CF9D52;
-  font-family: 'Montserrat';
+  font-family: 'Book antiqua';
 }
 
 .main--section--news--body--item--subtitle {
@@ -615,16 +615,17 @@ html {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #BBBBBB;
-  padding: 20px 0px;
+  /* padding: 20px 0px; */
   font-size: 20px;
   font-weight: 500;
   font-family: 'Montserrat';
   caret-color: #CF9D52;
 }
 
-.input::placeholder {
-  color: #BBBBBB;
-  display: inline;
+.input.hintable::after {
+  color: red;
+  content: "*";
+  opacity: 1
 }
 
 

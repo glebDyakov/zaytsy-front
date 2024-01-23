@@ -11,21 +11,20 @@
             <p class="main--section--title">форма обратной связи</p>
             <div class="flex gap-[20px] mb-[100px]">
                 <div class="main--section--photo flex flex-col w-full md:w-auto">
-                    <input v-model="name" type="text" class="input" placeholder="Имя Фамилия" />
-                    <input v-model="email" type="email" class="input" placeholder="Электронная почта*" />
-                    <input v-model="phone" type="phone" class="input" placeholder="Номер телефона*" />
-                    <input
-                        v-model="address"
-                        type="text"
-                        class="input"
-                        placeholder="Указать место установки на карте*"
-                    />
-                    <input
-                        v-model="desc"
-                        type="text"
-                        class="textarea"
-                        placeholder="Опишите образ зайца (300 знаков)*"
-                    />
+                    <span @input="changeNameInput" :contenteditable="true" class="input h-[39px]" :class="{'text-[#000]': name, 'text-[#BBBBBB] hintable': !name}">{{name ?? 'Имя Фамилия'}}</span>
+                    <span @input="changeEmailInput" :contenteditable="true" class="input h-[39px] overflow-hidden" :class="{'text-[#000]': email, 'text-[#BBBBBB] hintable': !email}">{{email ?? 'Электронная почта'}}</span>
+                    <span @input="changePhoneInput" :contenteditable="true" class="input h-[39px] overflow-hidden" :class="{'text-[#000]': phone, 'text-[#BBBBBB] hintable': !phone}">{{phone ?? 'Номер телефона'}}</span>
+                    <div class="relative">
+                        <div class="">
+                            <img
+                                class="left-[calc(100%-24px)] top-[24px] cursor-pointer relative"
+                                src="@/assets/icons/map.svg"
+                                alt="telegram"
+                            />
+                            <span @input="changeAddressInput" :contenteditable="true" class="block input h-[39px] overflow-hidden" :class="{'text-[#000]': address, 'text-[#BBBBBB] hintable': !address}">{{address ?? 'Указать место установки на карте'}}</span>
+                        </div>
+                    </div>
+                    <span @input="changeDescInput" :contenteditable="true" class="input h-[63px] overflow-hidden" :class="{'text-[#000]': desc, 'text-[#BBBBBB] hintable': !desc}">{{desc ?? 'Опишите образ зайца (300 знаков)'}}</span>
                     <div class="main--section--photo--confirm" @click="addPhotoOnClick">
                         <img
                             class="main--section--photo--confirm--img"
@@ -44,7 +43,6 @@
                     </div>
                     <button
                         class="btn h-[54px]"
-                        :disabled="!name.length || !address.length || !hare.length || !isConfirm"
                     >
                         Отправить
                     </button>
@@ -69,11 +67,11 @@ import News from '@/components/main/News.vue';
 import ContactsAndPhoto from '@/components/main/ContactsAndPhoto.vue';
 import { ref, onMounted } from 'vue';
 
-const name = ref('')
-const email = ref('')
-const phone = ref('')
-const address = ref('')
-const desc = ref('')
+const name = ref(null)
+const email = ref(null)
+const phone = ref(null)
+const address = ref(null)
+const desc = ref(null)
 const isConfirm = ref(false)
 const addPhotoOnClick = () => {
   const input = document.createElement('input')
@@ -101,6 +99,108 @@ const scrollToTop = () => {
     behavior: 'smooth'
   });
 }
+
+const changeNameInput = (e) => {
+  if (e.target.textContent.length <= 0) {
+    name.value = null
+  } else {
+    if (!name.value) {
+      e.target.textContent = e.data;
+    }
+    name.value = e.target.textContent;
+  }
+  setTimeout(() => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.setStart(e.target, e.target.childNodes.length);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, 10);
+}
+
+const changeEmailInput = (e) => {
+  if (e.target.textContent.length <= 0) {
+    email.value = null
+  } else {
+    if (!email.value) {
+      e.target.textContent = e.data;
+    }
+    email.value = e.target.textContent;
+  }
+  
+  setTimeout(() => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.setStart(e.target, e.target.childNodes.length);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, 10);
+}
+
+
+const changeAddressInput = (e) => {
+  if (e.target.textContent.length <= 0) {
+    address.value = null
+  } else {
+    if (!email.value) {
+      e.target.textContent = e.data;
+    }
+    address.value = e.target.textContent;
+  }
+  
+  setTimeout(() => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.setStart(e.target, e.target.childNodes.length);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, 10);
+}
+
+
+const changePhoneInput = (e) => {
+  if (e.target.textContent.length <= 0) {
+    email.value = null
+  } else {
+    if (!phone.value) {
+      e.target.textContent = e.data;
+    }
+    phone.value = e.target.textContent;
+  }
+  
+  setTimeout(() => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.setStart(e.target, e.target.childNodes.length);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, 10);
+}
+
+
+const changeDescInput = (e) => {
+  if (e.target.textContent.length <= 0) {
+    desc.value = null
+  } else {
+    if (!desc.value) {
+      e.target.textContent = e.data;
+    }
+    desc.value = e.target.textContent;
+  }
+  
+  setTimeout(() => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.setStart(e.target, e.target.childNodes.length);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, 10);
+}
 </script>
 
 <style scoped>
@@ -120,5 +220,13 @@ const scrollToTop = () => {
 .app--img--large {
     width: 680px;
     height: 452px;
+}
+.input--trailing::after {
+    content: '';
+    display: block;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
 }
 </style>
