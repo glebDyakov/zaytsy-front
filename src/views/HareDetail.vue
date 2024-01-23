@@ -4,7 +4,7 @@
       <Info />
       <History />
   </div>
-    <MapDetails class="bg-white"/>
+  <MapDetails class="bg-white"/>
   <div class="layout">
     <Galery />
     <Souvenirs />
