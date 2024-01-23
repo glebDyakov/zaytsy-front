@@ -1,17 +1,23 @@
 <template>
   <div class="custom-container flex w-full flex-col items-start mb-[120px]">
-    <dialog id="dialog" class="w-[840px] h-[468px] m-auto p-[30px]">
-      <p class="mb-[10px] text-right text-[#CF9D52] cursor-pointer" @click="closeTest">закрыть</p>
+    <dialog id="dialog" class="min-w-full min-h-full sm:min-w-0 sm:min-h-0 w-[840px] h-[468px] m-auto p-[30px]">
+      <div class="flex justify-between sm:justify-end mb-[30px] sm:mb-[10px] ">
+        <img class="w-[22px] h-[22px] sm:hidden" src="@/assets/icons/chevron-left.svg" alt="back" @click="step--" />
+        <div class="flex">
+          <p class="text-right text-[#CF9D52] cursor-pointer hidden sm:block" @click="closeTest">закрыть</p>
+          <img class="cursor-pointer inline-block sm:hidden rotate-[45deg]" src="@/assets/icons/times_dialog.svg" alt="close" @click="closeTest" />
+        </div>
+      </div>
       <p class="mb-[8px]">Вопрос {{step + 1}} из {{questions.length}}</p>
       <progress class="w-full h-[8px] progress mb-[24px]" :value="100 / questions.length * (step + 1)" max="100" min="0" />
       <template v-if="step === 0">
         <p class="title mb-[24px]">Некий текст</p>
-        <div class="galery mb-[30px]">
-          <div v-for="photo in 6" :key="photo">
+        <div class="galery grid-cols-2 sm:grid-cols-4 gap-[12px] sm:gap-[20px] mb-[30px]">
+          <div v-for="photo in 4" :key="photo">
             <div v-if="selectedImg === photo" class="w-[24px] h-[24px] bg-[#CF9D52] rounded-full flex items-center justify-center absolute translate-x-[146px] translate-y-[+10px]">
               <div class="w-[16px] h-[16px] bg-[#fff] rounded-full" />
             </div>
-            <img :src="`src/assets/img/photo${photo}.png`" class="cursor-pointer" @click="selectedImg = photo" />
+            <img :src="`src/assets/img/photo${photo}.png`" class="cursor-pointer w-[158px] sm:w-[142px] md:w-[180px]" @click="selectedImg = photo" />
           </div>
         </div>
       </template>
@@ -26,7 +32,7 @@
       </template>
       <template v-else-if="step === 2">
         <p class="title mb-[24px]">Некий текст</p>
-        <div class="galery mb-[30px]">
+        <div class="galery grid-cols-2 sm:grid-cols-4 gap-[12px] sm:gap-[20px] mb-[30px]">
           <div v-for="photo in 8" :key="photo">
             <div v-if="selectedImg2 === photo" class="w-[24px] h-[24px] bg-[#CF9D52] rounded-full flex items-center justify-center absolute translate-x-[146px] translate-y-[+10px]">
               <div class="w-[16px] h-[16px] bg-[#fff] rounded-full" />
@@ -36,11 +42,11 @@
         </div>
       </template>
       <div class="flex">
-        <div v-if="step > 0" class="flex items-center gap-[10px] cursor-pointer" @click="step--">
-          <img class="w-[22px] h-[22px]" src="@/assets/icons/chevron-left.svg" alt="media" />
+        <div v-if="step > 0" class="hidden sm:flex items-center gap-[10px] cursor-pointer" @click="step--">
+          <img class="w-[22px] h-[22px]" src="@/assets/icons/chevron-left.svg" alt="back" />
           <p class="text-[#CF9D52]">назад</p>
         </div>
-        <button class="btn btn--minimized w-[126px] h-[54px] flex items-center justify-center ml-auto" @click="next">Далее</button>
+        <button class="btn btn--minimized w-full sm:w-[126px] h-[54px] flex items-center justify-center ml-auto" @click="next">Далее</button>
       </div>
     </dialog>
     <p class="main--section--title">Брандмейстер</p>
@@ -157,9 +163,7 @@ const next = () => {
   background-color: #BBBBBB;
 }
 .galery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: inline-grid;
 }
 
 .title {
