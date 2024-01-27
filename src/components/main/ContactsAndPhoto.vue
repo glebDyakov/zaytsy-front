@@ -114,12 +114,15 @@ const changeAddressInput = (e) => {
     range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
+    if (e.target.textContent.length <= 0) {
+      address.value = null;
+    }
   }, 0);
 }
 
 const changeNameInput = (e) => {
   if (e.target.textContent.length <= 0) {
-    name.value = null
+    name.value = null;
   } else {
     if (!name.value) {
       e.target.textContent = e.data;
@@ -133,6 +136,9 @@ const changeNameInput = (e) => {
     range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
+    if (e.target.textContent.length <= 0) {
+      name.value = null;
+    }
   }, 10);
 }
 
@@ -145,6 +151,10 @@ const changeNameInput = (e) => {
   font-family: 'Montserrat';
   position: relative;
   margin-bottom: 24px;
+}
+
+.select select:focus {
+  outline: none;
 }
 
 .select select {

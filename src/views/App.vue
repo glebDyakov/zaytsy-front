@@ -15,9 +15,9 @@
                     <span @input="changeEmailInput" :contenteditable="true" class="input h-[39px] overflow-hidden" :class="{'text-[#000]': email, 'text-[#BBBBBB] hintable': !email}">{{email ?? 'Электронная почта'}}</span>
                     <span @input="changePhoneInput" :contenteditable="true" class="input h-[39px] overflow-hidden" :class="{'text-[#000]': phone, 'text-[#BBBBBB] hintable': !phone}">{{phone ?? 'Номер телефона'}}</span>
                     <div class="relative">
-                        <div class="">
+                        <div>
                             <img
-                                class="left-[calc(100%-24px)] top-[24px] cursor-pointer relative"
+                                class="left-[calc(100%-24px)] top-[24px] cursor-pointer absolute translate-y-[-23px]"
                                 src="@/assets/icons/map.svg"
                                 alt="telegram"
                             />
@@ -116,6 +116,9 @@ const changeNameInput = (e) => {
     range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
+    if (e.target.textContent.length <= 0) {
+      name.value = null
+    }
   }, 10);
 }
 
@@ -136,6 +139,9 @@ const changeEmailInput = (e) => {
     range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
+    if (e.target.textContent.length <= 0) {
+      email.value = null
+    }
   }, 10);
 }
 
@@ -157,13 +163,16 @@ const changeAddressInput = (e) => {
     range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
+    if (e.target.textContent.length <= 0) {
+      address.value = null
+    }
   }, 10);
 }
 
 
 const changePhoneInput = (e) => {
   if (e.target.textContent.length <= 0) {
-    email.value = null
+    phone.value = null
   } else {
     if (!phone.value) {
       e.target.textContent = e.data;
@@ -178,6 +187,9 @@ const changePhoneInput = (e) => {
     range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
+    if (e.target.textContent.length <= 0) {
+      phone.value = null
+    }
   }, 10);
 }
 
@@ -199,6 +211,9 @@ const changeDescInput = (e) => {
     range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
+    if (e.target.textContent.length <= 0) {
+      desc.value = null
+    }
   }, 10);
 }
 </script>

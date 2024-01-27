@@ -622,12 +622,16 @@ html {
   caret-color: #CF9D52;
 }
 
+.input.hintable::selection {
+  background-color: transparent;
+  caret-color: white;
+}
+
 .input.hintable::after {
   color: red;
   content: "*";
   opacity: 1
 }
-
 
 .textarea:focus {
   outline: none;
